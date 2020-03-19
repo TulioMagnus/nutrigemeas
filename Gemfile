@@ -24,11 +24,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
+  gem 'faker', '~> 2.10', '>= 2.10.2'
+  gem 'shoulda-matchers'
 end
 
 group :development do
   gem 'better_errors', '~> 2.6'
-  gem 'faker', '~> 2.10', '>= 2.10.2'
   gem 'guard-rubocop', '~> 1.3'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rails-erd', '~> 1.6'
