@@ -8,12 +8,12 @@ ruby '2.6.5'
 gem 'carrierwave', '~> 2.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
-gem 'rails-i18n', '~> 6.0.0'
 gem 'jbuilder', '~> 2.7'
 gem 'kaminari', '~> 1.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
+gem 'rails-i18n', '~> 6.0.0'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
@@ -23,8 +23,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
   gem 'faker', '~> 2.10', '>= 2.10.2'
+  gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
   gem 'shoulda-matchers'
 end
 
