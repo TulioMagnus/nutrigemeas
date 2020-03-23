@@ -9,9 +9,10 @@ class CreatePacients < ActiveRecord::Migration[6.0]
       t.integer :number
       t.string :state
       t.string :country
-      t.integer :cpf
+      t.integer :cpf, limit: 8
       t.text :obs
-      t.integer :phone
+      t.integer :phone, limit: 8
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
