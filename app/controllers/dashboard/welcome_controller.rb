@@ -1,4 +1,4 @@
-class Dashboard::WelcomeController < ApplicationController
+class Dashboard::WelcomeController < DashboardController
   def index
   end
 end

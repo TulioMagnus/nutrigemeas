@@ -26,6 +26,7 @@ group :development, :test do
   gem 'faker', '~> 2.10', '>= 2.10.2'
   gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
   gem 'shoulda-matchers'
+  gem 'tty-spinner'
 end
 
 group :development do
