@@ -7,8 +7,9 @@
       </div>
       <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Widgets</li>
+        
+        <%#TODO - Implement search engine %>
+          <li class="breadcrumb-item"><a href="#">Implementar Search aqui</a></li>
       </ol>
       </div>
   </div>
@@ -18,8 +19,6 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-  <h3 class="mt-4 mb-4">Social Widgets</h3>
-
   <div class="row">
   <% @pacients.each do |pacient| %>
       <div class="col-md-4">
@@ -52,12 +51,12 @@
       <!-- /.col -->
     </div>
     <% end %>
+    <div class="text-center">
+      <%= paginate @pacients %>
+    </div>
   </div>
+  
   <!-- /.row -->
   </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
-
-<a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
-  <i class="fas fa-chevron-up"></i>
-</a>
