@@ -1,0 +1,51 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Nutri</b>Gêmeas</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Entre com suas credenciais</p>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="input-group mb-3">
+          <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <% if devise_mapping.rememberable? %>
+              <div class="icheck-primary">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+           </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <%= f.submit "Acessar", class:"btn btn-primary btn-block" %>
+          </div>
+          <!-- /.col -->
+        </div>
+      <% end %>
+      
+      <p class="mb-1">
+        <%= render "users/shared/links" %>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
