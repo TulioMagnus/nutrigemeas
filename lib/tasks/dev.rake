@@ -43,7 +43,8 @@ namespace :dev do
         state: Faker::Address.state,
         country: Faker::Address.country,
         phone: Faker::PhoneNumber.phone_number,
-        obs: Faker::Hipster.paragraph
+        obs: Faker::Hipster.paragraph,
+        profession: Faker::Job.title
       )
     end
   end

@@ -16,9 +16,9 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'sass-rails', '>= 6'
+gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
-gem 'simple_form'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

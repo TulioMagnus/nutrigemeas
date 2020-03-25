@@ -32,4 +32,5 @@
         number: Número
         obs: Observações
         user_id: Nutri responsável
+        user: Nutri responsável
         avatar: Foto do Paciente

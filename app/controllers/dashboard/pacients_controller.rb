@@ -72,6 +72,6 @@ class Dashboard::PacientsController < DashboardController
   def pacient_params
     params.require(:pacient).permit(:first_name, :last_name, :birth_date, :sex, :street, :number,
                                     :state, :country, :city, :cpf, :obs, :phone, :user_id, :email,
-                                    :avatar, :avatar_cache, :remove_avatar)
+                                    :avatar, :avatar_cache, :remove_avatar, :profession)
   end
 end

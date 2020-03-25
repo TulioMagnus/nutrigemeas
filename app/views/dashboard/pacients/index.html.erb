@@ -19,12 +19,11 @@
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-  <div class="row">
-  <% @pacients.each do |pacient| %>
-      <div class="col-md-4">
-      <!-- Widget: user widget style 2 -->
-      
-        <div class="card card-widget widget-user-2">
+    <div class="row">
+      <% @pacients.each do |pacient| %>
+        <div class="col-md-4">
+        <!-- Widget: user widget style 2 -->
+          <div class="card card-widget widget-user-2">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-success">
             <div class="widget-user-image">
@@ -32,31 +31,30 @@
                   class:"img-circle elevation-2") %>
             </div>
             <!-- /.widget-user-image -->
-            <h3 class="widget-user-username"><%= pacient.first_name %> <%= pacient.last_name %></h3>
+            <h5 class="widget-user-username"><%= pacient.first_name %> <%= pacient.last_name %></h3>
             <h5 class="widget-user-desc">Info aqui</h5>
             </div>
             <div class="card-footer p-0">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                   <%= link_to dashboard_pacient_path(pacient), class:"nav-link" do %>
-                   Perfil 
+                    <%= link_to dashboard_pacient_path(pacient), class:"nav-link" do %>
+                    Perfil 
                     <span class="float-right badge bg-primary"><i class="fas fa-arrow-circle-right"></i></span>
                     <% end %>
                 </li>
             </ul>
             </div>
-        </div>
-      
-      <!-- /.widget-user -->
-      <!-- /.col -->
+          </div>
+        <!-- /.widget-user -->
+        <!-- /.col -->
+        </div>  
+      <% end %>
+      <div class="text-center">
+        <%= paginate @pacients %>
+      </div>
     </div>
-    <% end %>
-    <div class="text-center">
-      <%= paginate @pacients %>
-    </div>
+    <!-- /.row -->
   </div>
-  
-  <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
