@@ -18,7 +18,7 @@
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
-              <%= image_tag(@pacient.avatar.url(:thumb), alt: 'User profile picture', class:"profile-user-img img-fluid img-circle") if @pacient.avatar %>
+              <%= image_tag(@pacient.avatar.url(:medium), alt: 'User profile picture', class:"profile-user-img img-fluid img-circle") if @pacient.avatar %>
             </div>
             <h3 class="profile-username text-center"><%= @pacient.first_name %> <%= @pacient.last_name %></h3>
 

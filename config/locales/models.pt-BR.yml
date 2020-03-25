@@ -19,7 +19,7 @@
         updated_at: Atualizado em
       pacient:
         id: Código
-        furst_name: Nome
+        first_name: Nome
         last_name: Sobrenome
         sex: Sexo
         birth_date: Data de nascimento
