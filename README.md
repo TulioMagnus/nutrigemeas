@@ -3,14 +3,14 @@
 O propósito deste app não é ser escalável, serão somente dois usuários gerenciando pacientes de um consultório de nutrição.
 Caso fosse necessária a escalabilidade de código, no caso de ser utilizado por diversos consultórios, deve-se compartimentar utilizando a gem Apartment, por exemplo, já que foi projetada de certa forma que as nutris possam visualizar/editar/excluir qualquer paciente presente no app, independente se são responsáveis por ele ou não.
 
-## Getting Started
+## Clone o App
 
 Para clonar o app:
 ```
 git clone https://github.com/TulioMagnus/nutrigemeas.git
 ```
 
-### Prerequisites
+### Pré-requisitos
 
 ```
 Ruby -v = 2.6.5
@@ -19,7 +19,7 @@ Nodejs -v = 12.16.1
 Yarn -v = 1.22.4
 ```
 
-### Installing
+### Instalando
 
 Esta aplicação utiliza upload de imagens com a gem 'carrierwave' que depende
 do ImageMagick, para instalar vide: [ImageMagick](https://imagemagick.org/script/download.php)
@@ -44,7 +44,7 @@ foreman start -f Procfile.dev
 ```
 
 
-## Running the tests
+## Testes
 
 Os testes são realizados utilizando as gems RSpec e Capybara.
 
@@ -53,21 +53,21 @@ para rodar todos os testes, digite no terminal:
 rspec
 ```
 
-## Built With
+## Desenvovido com a ajuda de
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Authors
+## Autor
 
 * **Túlio Magnus** - *Initial work* - [Github](https://github.com/TulioMagnus)
 
-## License
+## Licença
 
 Este projeto é de código aberto e possui licença MIT.
 
-## Acknowledgments
+## Agradecimentos
 
 * Hat tip to anyone whose code was used
 * Inspiration
