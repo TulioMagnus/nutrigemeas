@@ -1,61 +1,56 @@
 # NutriGemeas
 
 O propósito deste app não é ser escalável, serão somente dois usuários gerenciando pacientes de um consultório de nutrição.
-Caso fosse necessária a escalabilidade de código, no caso de ser utilizado em diversos consultórios, deve-se compartimentar utilizando a gem Apartment, por exemplo.
+Caso fosse necessária a escalabilidade de código, no caso de ser utilizado por diversos consultórios, deve-se compartimentar utilizando a gem Apartment, por exemplo, já que foi projetada de certa forma que as nutris possam visualizar/editar/excluir qualquer paciente presente no app, independente se são responsáveis por ele ou não.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Para clonar o app:
+```
+git clone https://github.com/TulioMagnus/nutrigemeas.git
+```
 
 ### Prerequisites
 
-* Ruby -v = 2.6.5
-* Rails -v = 6.0.2.1
-* Nodejs -v = 12.16.1
-* Yarn -v = 1.22.4
-
 ```
-Give examples
+Ruby -v = 2.6.5
+Rails -v = 6.0.2.1
+Nodejs -v = 12.16.1
+Yarn -v = 1.22.4
 ```
 
 ### Installing
 
+Esta aplicação utiliza upload de imagens com a gem 'carrierwave' que depende
+do ImageMagick, para instalar vide: [ImageMagick](https://imagemagick.org/script/download.php)
+
 Para iniciar a aplicação em ambiente de desenvolvimento:
-- Instalar a gem 'Foreman'
-- Rodar no terminal: foreman start -f Procfile.dev
 
-Say what the step will be
+Instale a gem 'Foreman'
 
 ```
-Give the example
+gem install foreman
 ```
 
-And repeat
+Rode o bundle para instalar as gems do projeto
 
 ```
-until finished
+bundle install
+```
+Rode no terminal:
+
+```
+foreman start -f Procfile.dev
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Os testes são realizados utilizando as gems RSpec e Capybara.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+para rodar todos os testes, digite no terminal:
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+rspec
 ```
 
 ## Built With
@@ -66,13 +61,11 @@ Give an example
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Túlio Magnus** - *Initial work* - [Github](https://github.com/TulioMagnus)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Este projeto é de código aberto e possui licença MIT.
 
 ## Acknowledgments
 
