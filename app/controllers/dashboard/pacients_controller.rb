@@ -11,7 +11,9 @@ class Dashboard::PacientsController < DashboardController
 
   # GET /pacients/1
   # GET /pacients/1.json
-  def show; end
+  def show
+    @age = CalculateAge.call(@pacient.birth_date)
+  end
 
   # GET /pacients/new
   def new

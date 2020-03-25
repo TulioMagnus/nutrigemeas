@@ -39,9 +39,10 @@
             <div class="card-footer p-0">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                <a href="#" class="nav-link">
-                   Perfil <span class="float-right badge bg-primary"><i class="fas fa-arrow-circle-right"></i></span>
-                </a>
+                   <%= link_to dashboard_pacient_path(pacient), class:"nav-link" do %>
+                   Perfil 
+                    <span class="float-right badge bg-primary"><i class="fas fa-arrow-circle-right"></i></span>
+                    <% end %>
                 </li>
             </ul>
             </div>
