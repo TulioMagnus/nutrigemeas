@@ -14,22 +14,19 @@
     <div class="row">
       <div class="col-md-3">
 
-        <!-- Profile Image -->
+        <!-- Profile avatar -->
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
-            <%= image_tag('user7-128x128.jpg', alt:"User profile picture",
-            class:"profile-user-img img-fluid img-circle",
-            style:"opacity: .8") %>
-           </div>
-
+              <%= image_tag(@pacient.avatar.url(:thumb), alt: 'User profile picture', class:"profile-user-img img-fluid img-circle") if @pacient.avatar %>
+            </div>
             <h3 class="profile-username text-center"><%= @pacient.first_name %> <%= @pacient.last_name %></h3>
 
             <p class="text-muted text-center">Profissão</p>
 
             <ul class="list-group list-group-unbordered mb-3">
               <li class="list-group-item">
-                <b>Idade: </b> <a class="float-right"><%= @age %> anos</a>
+                <b>Idade: </b> <a class="float-right"><%= @pacient.age %> anos</a>
               </li>
               <li class="list-group-item">
                 <b>Altura Atual:</b> <a class="float-right">xxx</a>
@@ -98,10 +95,10 @@
           <div class="card-body">
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
-                <!-- Post -->
-                <div class="post">
+                <!-- pacient -->
+                <div class="pacient">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                    <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user avatar">
                     <span class="username">
                       <a href="#">Jonathan Burke Jr.</a>
                       <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -129,12 +126,12 @@
 
                   <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
                 </div>
-                <!-- /.post -->
+                <!-- /.pacient -->
 
-                <!-- Post -->
-                <div class="post clearfix">
+                <!-- pacient -->
+                <div class="pacient clearfix">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                    <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User avatar">
                     <span class="username">
                       <a href="#">Sarah Ross</a>
                       <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -159,17 +156,17 @@
                     </div>
                   </form>
                 </div>
-                <!-- /.post -->
+                <!-- /.pacient -->
 
-                <!-- Post -->
-                <div class="post">
+                <!-- pacient -->
+                <div class="pacient">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                    <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User avatar">
                     <span class="username">
                       <a href="#">Adam Jones</a>
                       <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
                     </span>
-                    <span class="description">Posted 5 photos - 5 days ago</span>
+                    <span class="description">paciented 5 photos - 5 days ago</span>
                   </div>
                   <!-- /.user-block -->
                   <div class="row mb-3">
@@ -208,7 +205,7 @@
 
                   <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
                 </div>
-                <!-- /.post -->
+                <!-- /.pacient -->
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="timeline">
@@ -262,7 +259,7 @@
                     <div class="timeline-item">
                       <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
 
-                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your pacient</h3>
 
                       <div class="timeline-body">
                         Take me to your leader!

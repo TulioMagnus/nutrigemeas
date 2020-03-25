@@ -11,8 +11,7 @@ class Dashboard::PacientsController < DashboardController
 
   # GET /pacients/1
   # GET /pacients/1.json
-  def show
-  end
+  def show; end
 
   # GET /pacients/new
   def new
@@ -29,7 +28,7 @@ class Dashboard::PacientsController < DashboardController
 
     respond_to do |format|
       if @pacient.save
-        format.html { redirect_to @pacient, notice: 'Pacient was successfully created.' }
+        format.html { redirect_to dashboard_pacients_path, notice: 'Pacient was successfully created.' }
         format.json { render :show, status: :created, location: @pacient }
       else
         format.html { render :new }
@@ -43,7 +42,7 @@ class Dashboard::PacientsController < DashboardController
   def update
     respond_to do |format|
       if @pacient.update(pacient_params)
-        format.html { redirect_to @pacient, notice: 'Pacient was successfully updated.' }
+        format.html { redirect_to dashboard_pacients_path, notice: 'Pacient was successfully updated.' }
         format.json { render :show, status: :ok, location: @pacient }
       else
         format.html { render :edit }
@@ -71,6 +70,8 @@ class Dashboard::PacientsController < DashboardController
 
   # Only allow a list of trusted parameters through.
   def pacient_params
-    params.require(:pacient).permit(:first_name, :last_name)
+    params.require(:pacient).permit(:first_name, :last_name, :birth_date, :sex, :street, :number,
+                                    :state, :country, :city, :cpf, :obs, :phone, :user_id, :email,
+                                    :avatar, :avatar_cache, :remove_avatar)
   end
 end

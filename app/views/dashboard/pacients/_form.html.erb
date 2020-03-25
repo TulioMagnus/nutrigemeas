@@ -1,184 +1,141 @@
-<%= form_with(model: @pacient, url: dashboard_pacients_path) do |form| %>
-  <% if pacient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pacient.errors.count, "error") %> prohibited this pacient from being saved:</h2>
-
-      <ul>
-        <% pacient.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birth_date %>
-    <%= form.date_select :birth_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sex %>
-    <%= form.text_field :sex %>
-  </div>
-
-  <div class="field">
-    <%= form.label :street %>
-    <%= form.text_field :street %>
-  </div>
-
-  <div class="field">
-    <%= form.label :number %>
-    <%= form.number_field :number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.number_field :cpf %>
-  </div>
-
-  <div class="field">
-    <%= form.label :obs %>
-    <%= form.text_area :obs %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
 <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>General Form</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">General Form</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Paciente</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-6">
-            <!-- general form elements -->
-
-            <!-- Input addon -->
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Input Addon</h3>
-              </div>
-              <div class="card-body">
-                
-                <div class="input-group mb-3">
-                  <div class="row">
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder=".col-3">
-                    </div>
-                    <div class="col-4">
-                      <input type="text" class="form-control" placeholder=".col-4">
-                    </div>
-                    <div class="col-5">
-                      <input type="text" class="form-control" placeholder=".col-5">
-                    </div>
-                  </div>
-                </div>
-
-                <h4>With icons</h4>
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                  </div>
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control">
-                  <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-check"></i></span>
-                  </div>
-                </div>
-
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="fas fa-dollar-sign"></i>
-                    </span>
-                  </div>
-                  <input type="text" class="form-control">
-                  <div class="input-group-append">
-                    <div class="input-group-text"><i class="fas fa-ambulance"></i></div>
-                  </div>
-                </div>
-
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <%= simple_form_for([:dashboard, @pacient]) do |f| %>
+            <div class="card-body">
+              <!-- First row -->
+              <div class="row">
+                <div class="col-md-2">
                   <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
-                    </div>
+                    <%= f.input :first_name %>
                   </div>
                 </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.input :last_name %>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :birth_date, { class: 'form-control datepicker' } %>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.association :user, label_method: :email, value_method: :id, include_blank: false %>
+                  </div>
                 </div>
               </div>
-              <!-- /.card-body -->
+              <!-- /.First row -->
+              <!-- /.Second row -->
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group">
+                  <%= f.input :sex, as: :radio_buttons, collection: [['0', 'Mulher'], ['1', 'Homem']], label_method: :second, value_method: :first %>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                  <%= f.input :cpf %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :phone %>
+                    <%= f.text_field :phone, class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              <!-- /.Second row -->
+              <!-- /.Third row -->
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                  <%= f.label :street %>
+                  <%= f.text_field :street, class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <div class="form-group">
+                  <%= f.label :number %>
+                  <%= f.number_field :number, class:"form-control" %>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.label :city %>
+                    <%= f.text_field :city, class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :state %>
+                    <%= f.text_field :state, class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              <!-- /.Third row -->
+              <!-- /.Fourth row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                  <%= f.label :obs %>
+                  <%= f.text_area :obs, class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              <!-- /.Fourth row -->
+              <!-- /.Fifth row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <%= f.label :avatar do %>
+                      <%= f.file_field :avatar %>
+                      <%= f.hidden_field :avatar_cache %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <!-- /.Fifth row -->
             </div>
-            <!-- /.card -->
+            <!-- /.card-body -->
+            <div class="actions">
+              <%= f.button :submit %>
+            </div>
+        <% end %>
+      </div>
+      <!--/.col (left) -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
 
 
-          </div>
-          <!--/.col (left) -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+
+  

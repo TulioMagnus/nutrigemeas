@@ -11,7 +11,7 @@ namespace :dev do
       show_spinner('Creating DB...') { `rails db:create` }
       show_spinner('Migrating DB...') { `rails db:migrate` }
       show_spinner('Adding default user...') { `rails dev:add_default_user` }
-      show_spinner('Creating 100 fake pacients...') { `rails dev:add_fake_pacients` }
+      show_spinner('Creating fake pacients...') { `rails dev:add_fake_pacients` }
     else
       puts 'Você não está em ambiente de desenvolvimento!'
     end
@@ -28,14 +28,22 @@ namespace :dev do
 
   desc 'Add fake pacients'
   task add_fake_pacients: :environment do
-    100.times do
+    300.times do
       Pacient.create!(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
-        sex: %w[Male Female].sample,
+        sex: %w[Homem Mulher].sample,
         cpf: Faker::IDNumber.brazilian_citizen_number,
-        user: User.all.sample
+        user: User.all.sample,
+        email: Faker::Internet.email,
+        street: Faker::Address.street_name,
+        number: Faker::Address.building_number,
+        city: Faker::Address.city,
+        state: Faker::Address.state,
+        country: Faker::Address.country,
+        phone: Faker::PhoneNumber.phone_number,
+        obs: Faker::Hipster.paragraph
       )
     end
   end

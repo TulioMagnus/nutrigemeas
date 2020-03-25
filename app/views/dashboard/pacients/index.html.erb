@@ -28,9 +28,8 @@
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-success">
             <div class="widget-user-image">
-              <%= image_tag('user7-128x128.jpg', alt:"User Avatar",
-            class:"img-circle elevation-2",
-            style:"opacity: .8") %>
+              <%= image_tag(pacient.avatar.url(:medium), alt:"User Avatar",
+                  class:"img-circle elevation-2") %>
             </div>
             <!-- /.widget-user-image -->
             <h3 class="widget-user-username"><%= pacient.first_name %> <%= pacient.last_name %></h3>

@@ -11,7 +11,10 @@ class CreatePacients < ActiveRecord::Migration[6.0]
       t.integer :number
       t.string :state
       t.string :country
+      t.string :city
+      t.string :avatar
       t.integer :cpf, limit: 8
+      t.string :email
       t.text :obs
       t.integer :phone, limit: 8
       t.references :user, null: false, foreign_key: true

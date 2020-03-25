@@ -1,0 +1,35 @@
+'pt-BR':
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      pacient:
+        one: Paciente
+        other: Pacientes
+    attributes:
+      user:
+        id: Código
+        email: Email
+        first_name: Nome
+        last_name: Sobrenome
+        password: Senha
+        password_confirmation: Confirmação da Senha
+        created_at: Criado em
+        updated_at: Atualizado em
+      pacient:
+        id: Código
+        furst_name: Nome
+        last_name: Sobrenome
+        sex: Sexo
+        birth_date: Data de nascimento
+        cpf: CPF
+        street: Logradouro
+        city: Cidade
+        state: Estado
+        country: País
+        phone: Telefone
+        number: Número
+        obs: Observações
+        user_id: Nutri responsável
+        avatar: Foto do Paciente
