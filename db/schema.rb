@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,43 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_323_234_801) do
+ActiveRecord::Schema.define(version: 2020_03_26_180000) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'pacients', force: :cascade do |t|
-    t.string 'first_name'
-    t.string 'last_name'
-    t.date 'birth_date'
-    t.string 'profession'
-    t.string 'sex'
-    t.string 'street'
-    t.integer 'number'
-    t.string 'state'
-    t.string 'country'
-    t.string 'city'
-    t.string 'avatar'
-    t.bigint 'cpf'
-    t.string 'email'
-    t.text 'obs'
-    t.bigint 'phone'
-    t.bigint 'user_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['user_id'], name: 'index_pacients_on_user_id'
+  create_table "consultations", force: :cascade do |t|
+    t.date "consultation_date"
+    t.bigint "pacient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pacient_id"], name: "index_consultations_on_pacient_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "pacients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.string "profession"
+    t.string "sex"
+    t.string "street"
+    t.integer "number"
+    t.string "state"
+    t.string "country"
+    t.string "city"
+    t.string "avatar"
+    t.bigint "cpf"
+    t.string "email"
+    t.text "obs"
+    t.bigint "phone"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pacients_on_user_id"
   end
 
-  add_foreign_key 'pacients', 'users'
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "consultations", "pacients"
+  add_foreign_key "pacients", "users"
 end
