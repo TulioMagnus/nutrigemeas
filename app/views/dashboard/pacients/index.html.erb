@@ -6,10 +6,15 @@
       <h1>Pacientes</h1>
       </div>
       <div class="col-sm-6">
-      <ol class="breadcrumb float-sm-right">
-        
-        <%#TODO - Implement search engine %>
-          <li class="breadcrumb-item"><a href="#">Implementar Search aqui</a></li>
+      <ol class="breadcrumb float-sm-right">    
+        <%= search_form_for [:dashboard, @q], class:"form-inline ml-0 ml-md-3" do |f| %>
+          <div class="input-group input-group-sm">
+            <%= f.search_field :first_name_cont, class:"form-control form-control-navbar", type:"search", placeholder:"Buscar por nome" %>
+            <div class="input-group-append">
+              <%= f.submit class:'btn btn-navbar' %>
+            </div>
+          </div>
+        <% end %>
       </ol>
       </div>
   </div>
