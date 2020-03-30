@@ -8,12 +8,14 @@ class Dashboard::PacientsController < DashboardController
   def index
     @q = Pacient.ransack(params[:q])
     @pacients = @q.result.page(params[:page])
-    #@pacients = Pacient.order(:first_name).page params[:page]
+    # @pacients = Pacient.order(:first_name).page params[:page]
   end
 
   # GET /pacients/1
   # GET /pacients/1.json
-  def show; end
+  def show
+    @appointments = Appointment.where(pacient_id: params[:id]).order('appointment_date DESC')
+  end
 
   # GET /pacients/new
   def new

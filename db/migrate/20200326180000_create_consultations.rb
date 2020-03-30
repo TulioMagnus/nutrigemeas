@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateConsultations < ActiveRecord::Migration[6.0]
   def change
     create_table :consultations do |t|

@@ -133,31 +133,22 @@
                           <thead>
                             <tr>
                               <th>Data</th>
-                              <th>Status</th>
-                              <th>Ações</th>
+                              <th>Tipo</th>
+                              <th>Preço</th>
+                              <th>Pago?</th>
+                              <th></th>
                             </tr>
                           </thead>
                           <tbody>
+                            <% @appointments.each do |appointment| %>
                             <tr>
-                              <td>11-7-2014</td>
-                              <td><span class="tag tag-success">Approved</span></td>
-                              <td>Ver/Editar/Duplicar/Excluir</td>
+                              <td><%= l appointment.appointment_date, format: :default %></td>
+                              <td><%= appointment.appointment_type %></td>
+                              <td><%= appointment.price %></td>
+                              <td><%= humanize_boolean(appointment.payment_status) %></td>
+                              <td></td>
                             </tr>
-                            <tr>
-                              <td>11-7-2014</td>
-                              <td><span class="tag tag-warning">Pending</span></td>
-                              <td>Ver/Editar/Duplicar/Excluir</td>
-                            </tr>
-                            <tr>
-                              <td>11-7-2014</td>
-                              <td><span class="tag tag-primary">Approved</span></td>
-                              <td>Ver/Editar/Duplicar/Excluir</td>
-                            </tr>
-                            <tr>
-                              <td>11-7-2014</td>
-                              <td><span class="tag tag-danger">Denied</span></td>
-                              <td>Ver/Editar/Duplicar/Excluir</td>
-                            </tr>
+                            <% end %>
                           </tbody>
                         </table>
                       </div>

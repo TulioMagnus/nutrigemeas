@@ -1,11 +1,10 @@
-# encoding : utf-8
+# frozen_string_literal: true
 
-MoneyRails.configure do |config|
-
+MoneyRails.configure do |_config|
   # To set the default currency
   #
-  config.default_currency = :brl
-
+  # config.default_currency = :brl
+  Money.locale_backend = :i18n
   # Set default bank object
   #
   # Example:

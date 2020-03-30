@@ -12,6 +12,7 @@ namespace :dev do
       show_spinner('Migrating DB...') { `rails db:migrate` }
       show_spinner('Adding default user...') { `rails dev:add_default_user` }
       show_spinner('Creating fake pacients...') { `rails dev:add_fake_pacients` }
+      show_spinner('Creating fake appointments...') { `rails dev:add_fake_appointments` }
     else
       puts 'Você não está em ambiente de desenvolvimento!'
     end
@@ -45,6 +46,19 @@ namespace :dev do
         phone: Faker::PhoneNumber.phone_number,
         obs: Faker::Hipster.paragraph,
         profession: Faker::Job.title
+      )
+    end
+  end
+
+  desc 'Add fake appointments'
+  task add_fake_appointments: :environment do
+    500.times do
+      Appointment.create!(
+        appointment_date: Faker::Date.between(from: 3.years.ago, to: Date.today),
+        pacient: Pacient.all.sample,
+        appointment_type: %w[Consulta Retorno].sample,
+        payment_status: Faker::Boolean.boolean,
+        price: Faker::Number.decimal(l_digits: 3, r_digits: 2)
       )
     end
   end
