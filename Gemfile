@@ -5,9 +5,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'apexcharts', '~> 0.1.8'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'carrierwave', '~> 2.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
+gem 'groupdate'
 gem 'jbuilder', '~> 2.7'
 gem 'kaminari', '~> 1.2'
 gem 'money-rails', '~>1.12'
@@ -21,8 +24,6 @@ gem 'sass-rails', '>= 6'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
-
-gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
