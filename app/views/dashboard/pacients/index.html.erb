@@ -6,13 +6,11 @@
       <h1>Pacientes</h1>
       </div>
       <div class="col-sm-6">
-      <ol class="breadcrumb float-sm-right">    
-        <%= search_form_for [:dashboard, @q], class:"form-inline ml-0 ml-md-3" do |f| %>
-          <div class="input-group input-group-sm">
-            <%= f.search_field :first_name_cont, class:"form-control form-control-navbar", type:"search", placeholder:"Buscar por nome" %>
-            <div class="input-group-append">
-              <%= f.submit class:'btn btn-navbar' %>
-            </div>
+      <ol class="breadcrumb float-sm-right">
+        <%= search_form_for [:dashboard, @q], class:"input-group md-form form-sm form-1 pl-0" do |f| %>
+          <%= f.search_field :first_name_cont, class:"form-control my-0 py-1", type:"text", placeholder:"Buscar por nome" %>
+          <div class="input-group-prepend">
+            <%= f.submit class:"input-group-text purple lighten-3" %>
           </div>
         <% end %>
       </ol>
