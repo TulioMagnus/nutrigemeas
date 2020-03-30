@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'money-rails', '~>1.12'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
