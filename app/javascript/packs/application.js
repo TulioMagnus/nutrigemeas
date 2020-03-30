@@ -12,10 +12,12 @@ var jQuery = require("jquery")
 // import jQuery from "jquery";
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts
 
 import 'stylesheets/application'
 import 'bootstrap'
-import "@fortawesome/fontawesome-free/js/all";
+import "@fortawesome/fontawesome-free/js/all"
 import 'admin-lte'
 import 'overlayscrollbars/js/jquery.overlayScrollbars.js'
 
