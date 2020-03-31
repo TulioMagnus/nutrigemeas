@@ -2,7 +2,7 @@
 
 class Pacient < ApplicationRecord
   belongs_to :user
-  validates_presence_of %w[first_name last_name birth_date]
+  validates_presence_of %w[first_name last_name birth_date user]
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
 

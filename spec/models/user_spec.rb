@@ -10,9 +10,15 @@ RSpec.describe User, type: :model do
       email: Faker::Internet.email
     )
   end
-  it { should have_many(:pacients) }
-  it { is_expected.to validate_presence_of(:email) }
-  it { is_expected.to validate_presence_of(:password) }
-  it { is_expected.to validate_presence_of(:password_confirmation) }
-  it { expect(subject).to be_valid }
+
+  describe 'Associations' do
+    it { should have_many(:pacients) }
+  end
+
+  describe 'Validations' do
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_presence_of(:password) }
+    it { is_expected.to validate_presence_of(:password_confirmation) }
+    it { expect(subject).to be_valid }
+  end
 end
