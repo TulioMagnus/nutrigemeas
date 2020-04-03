@@ -1,0 +1,56 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Consulta</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <%= simple_form_for [:dashboard, @pacient, @appointment] do |f| %>
+            <div class="card-body">
+              <!-- First row -->
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :appointment_date, as: :date, html5: true %>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :appointment_type, collection: [ 'Consulta', 'Retorno'] %>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :price %>
+                  </div>
+                </div>
+              </div>
+              <!-- /.First row -->
+            </div>
+            <!-- /.card-body -->
+            <div class="actions">
+              <%= f.button :submit %>
+            </div>
+        <% end %>
+      </div>
+      <!--/.col (left) -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

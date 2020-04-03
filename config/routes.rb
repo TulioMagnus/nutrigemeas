@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     get 'welcome/index'
-    resources :pacients, shallow: true do
+    resources :pacients do
       resources :appointments
     end
   end

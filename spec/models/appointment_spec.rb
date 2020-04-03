@@ -15,6 +15,10 @@ RSpec.describe Appointment, type: :model do
     it { should belong_to(:pacient) }
   end
 
+  describe 'Money' do
+    it { should monetize(:price) }
+  end
+
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:appointment_date) }
     it { is_expected.to validate_presence_of(:appointment_type) }

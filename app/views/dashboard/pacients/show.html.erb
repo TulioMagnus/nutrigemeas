@@ -115,7 +115,7 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title">LINK PARA ADICIONAR CONSULTA</h3>
+                        <h3 class="card-title"><%= link_to 'Nova Consulta', new_dashboard_pacient_appointment_path(@pacient, @appointment) %></h3>
 
                         <div class="card-tools">
                           <div class="input-group input-group-sm" style="width: 150px;">
@@ -144,7 +144,7 @@
                             <tr>
                               <td><%= l appointment.appointment_date, format: :default %></td>
                               <td><%= appointment.appointment_type %></td>
-                              <td><%= appointment.price %></td>
+                              <td><%= humanized_money_with_symbol(appointment.price) %></td>
                               <td><%= humanize_boolean(appointment.payment_status) %></td>
                               <td></td>
                             </tr>

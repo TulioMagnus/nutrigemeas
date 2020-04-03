@@ -8,7 +8,7 @@ class Pacient < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   def age
-    now = Time.current
+    now = Time.zone.now
     dob = birth_date
     now.year - dob.year - (now.month > dob.month || (now.month == dob.month && now.day >= dob.day) ? 0 : 1)
   end
