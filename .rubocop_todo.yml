@@ -36,25 +36,6 @@ Style/AsciiComments:
     - 'app/uploaders/avatar_uploader.rb'
     - 'config/initializers/money.rb'
 
-# Offense count: 12
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/dashboard/appointments_controller.rb'
-    - 'app/controllers/dashboard/pacients_controller.rb'
-    - 'app/controllers/dashboard/welcome_controller.rb'
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/controllers/users/passwords_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users/sessions_controller.rb'
-    - 'app/controllers/users/unlocks_controller.rb'
-    - 'app/helpers/dashboard/appointments_helper.rb'
-    - 'app/helpers/dashboard/pacients_helper.rb'
-    - 'app/helpers/dashboard/welcome_helper.rb'
-
 # Offense count: 1
 Style/CommentedKeyword:
   Exclude:

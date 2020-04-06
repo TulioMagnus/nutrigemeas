@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-module Dashboard::StatisticsHelper
+module Dashboard
+  module StatisticsHelper
+  end
 end

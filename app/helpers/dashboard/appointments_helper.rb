@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-module Dashboard::AppointmentsHelper
+module Dashboard
+  module AppointmentsHelper
+  end
 end

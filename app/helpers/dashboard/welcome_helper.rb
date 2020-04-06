@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-module Dashboard::WelcomeHelper
+module Dashboard
+  module WelcomeHelper
+  end
 end

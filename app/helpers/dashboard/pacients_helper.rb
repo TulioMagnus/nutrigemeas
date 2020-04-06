@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-module Dashboard::PacientsHelper
+module Dashboard
+  module PacientsHelper
+  end
 end
