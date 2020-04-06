@@ -7,8 +7,7 @@ class Dashboard::PacientsController < DashboardController
   # GET /pacients.json
   def index
     @q = Pacient.ransack(params[:q])
-    @pacients = @q.result.page(params[:page])
-    # @pacients = Pacient.order(:first_name).page params[:page]
+    @pacients = @q.result.order(:first_name).page(params[:page])
   end
 
   # GET /pacients/1
