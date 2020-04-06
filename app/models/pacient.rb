@@ -7,6 +7,10 @@ class Pacient < ApplicationRecord
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
 
+  def full_name
+    [first_name, last_name].join(' ')
+  end
+
   def age
     now = Time.zone.now
     dob = birth_date

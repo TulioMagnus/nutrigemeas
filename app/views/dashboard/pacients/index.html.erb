@@ -1,63 +1,70 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
-  <div class="row mb-2">
+    <div class="row mb-2">
       <div class="col-sm-6">
-      <h1>Pacientes</h1>
+        <h1>Pacientes</h1>
       </div>
       <div class="col-sm-6">
-      <ol class="breadcrumb float-sm-right">
-        <%= search_form_for [:dashboard, @q], class:"input-group md-form form-sm form-1 pl-0" do |f| %>
-          <%= f.search_field :first_name_cont, class:"form-control my-0 py-1", type:"text", placeholder:"Buscar por nome" %>
-          <div class="input-group-prepend">
-            <%= f.submit class:"input-group-text purple lighten-3" %>
-          </div>
-        <% end %>
-      </ol>
-      </div>
-  </div>
-  </div><!-- /.container-fluid -->
-</section>
-
-<!-- Main content -->
-<section class="content">
-  <div class="container-fluid">
-    <div class="row">
-      <% @pacients.each do |pacient| %>
-        <div class="col-md-4">
-        <!-- Widget: user widget style 2 -->
-          <div class="card card-widget widget-user-2">
-            <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-success">
-            <div class="widget-user-image">
-              <%= image_tag(pacient.avatar.url(:medium), alt:"User Avatar",
-                  class:"img-circle elevation-2") %>
+        <ol class="breadcrumb float-sm-right">
+          <%= search_form_for [:dashboard, @q], class:"input-group md-form form-sm form-1 pl-0" do |f| %>
+            <%= f.search_field :first_name_cont, class:"form-control my-0 py-1", type:"text", placeholder:"Buscar por nome" %>
+            <div class="input-group-prepend">
+              <%= f.submit class:"input-group-text purple lighten-3" %>
             </div>
-            <!-- /.widget-user-image -->
-            <h5 class="widget-user-username"><%= pacient.first_name %> <%= pacient.last_name %></h3>
-            <h5 class="widget-user-desc">Info aqui</h5>
-            </div>
-            <div class="card-footer p-0">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <%= link_to dashboard_pacient_path(pacient), class:"nav-link" do %>
-                    Perfil 
-                    <span class="float-right badge bg-primary"><i class="fas fa-arrow-circle-right"></i></span>
-                    <% end %>
-                </li>
-            </ul>
-            </div>
-          </div>
-        <!-- /.widget-user -->
-        <!-- /.col -->
-        </div>  
-      <% end %>
-      <div class="text-center">
-        <%= paginate @pacients %>
+          <% end %>
+        </ol>
       </div>
     </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container-fluid -->
+  </div><!-- /.container-fluid -->
 </section>
-<!-- /.content -->
+<section class="content">
+  <!-- Default box -->
+  <div class="card card-solid">
+    <div class="card-body pb-0">
+      <div class="row d-flex align-items-stretch">
+        <% @pacients.each do |pacient| %>
+          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+            <div class="card bg-light">
+              <div class="card-header text-muted border-bottom-0">
+                <%= pacient.profession %>
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-7">
+                    <h2 class="lead"><b><%= pacient.full_name %></b></h2>
+                    <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mobile-alt"></i></span> <%= pacient.phone %></li>
+                    </ul>
+                  </div>
+                  <div class="col-5 text-center">
+                    <%= image_tag(pacient.avatar.url(:medium), alt:"",
+                        class:"img-circle img-fluid") %>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                  <%= link_to dashboard_pacient_path(pacient), class:"btn btn-sm btn-primary" do %>
+                    <i class="fas fa-user"></i> Perfil
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+      <nav aria-label="Contacts Page Navigation">
+        <ul class="pagination justify-content-center m-0">
+          <%= paginate @pacients %>
+        </ul>
+      </nav>
+    </div>
+    <!-- /.card-footer -->
+  </div>
+  <!-- /.card -->
+</section>

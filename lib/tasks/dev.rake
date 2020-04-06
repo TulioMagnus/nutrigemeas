@@ -46,7 +46,7 @@ namespace :dev do
         city: Faker::Address.city,
         state: Faker::Address.state,
         country: Faker::Address.country,
-        phone: Faker::PhoneNumber.phone_number,
+        phone: Faker::PhoneNumber.cell_phone,
         obs: Faker::Hipster.paragraph,
         profession: Faker::Job.title
       )

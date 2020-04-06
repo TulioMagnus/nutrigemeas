@@ -14,10 +14,10 @@ class CreatePacients < ActiveRecord::Migration[6.0]
       t.string :country
       t.string :city
       t.string :avatar
-      t.integer :cpf, limit: 8
+      t.string :cpf
       t.string :email
       t.text :obs
-      t.integer :phone, limit: 8
+      t.string :phone
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
