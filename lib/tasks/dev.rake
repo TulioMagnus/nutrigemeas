@@ -23,7 +23,10 @@ namespace :dev do
     User.create!(
       email: 'user@user.com',
       password: DEFAULT_PASSWORD,
-      password_confirmation: DEFAULT_PASSWORD
+      password_confirmation: DEFAULT_PASSWORD,
+      first_name: 'Bruna',
+      last_name: 'Alcarde',
+      avatar: Faker::Avatar.image
     )
   end
 

@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  namespace :dashboard do
-    get 'statistics/index'
-  end
+
   root 'dashboard/welcome#index'
 
   namespace :dashboard do
     get 'welcome/index'
+    get 'statistics/index'
     resources :pacients do
       resources :appointments
     end

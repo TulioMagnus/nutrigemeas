@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_330_175_938) do
+ActiveRecord::Schema.define(version: 20_200_406_140_101) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 20_200_330_175_938) do
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['pacient_id'], name: 'index_appointments_on_pacient_id'
-  end
-
-  create_table 'consultations', force: :cascade do |t|
-    t.date 'consultation_date'
-    t.bigint 'pacient_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['pacient_id'], name: 'index_consultations_on_pacient_id'
   end
 
   create_table 'pacients', force: :cascade do |t|
@@ -65,11 +57,13 @@ ActiveRecord::Schema.define(version: 20_200_330_175_938) do
     t.datetime 'remember_created_at'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'avatar'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
   add_foreign_key 'appointments', 'pacients'
-  add_foreign_key 'consultations', 'pacients'
   add_foreign_key 'pacients', 'users'
 end
