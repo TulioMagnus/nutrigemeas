@@ -1,5 +1,9 @@
 'pt-BR':
   activerecord:
+    status_list:
+      inactive: Inativo
+      active: Ativo
+      pendent: Pendente
     models:
       user:
         one: Usuário
