@@ -3,8 +3,8 @@
 module Dashboard
   class StatisticsController < DashboardController
     def index
-      @pacient_male = Pacient.all.where(sex: 'Homem').count
-      @pacient_female = Pacient.all.where(sex: 'Mulher').count
+      @pacient_male = Pacient.all.where(gender: 'Homem').count
+      @pacient_female = Pacient.all.where(gender: 'Mulher').count
       @pacients = Pacient.all
     end
   end

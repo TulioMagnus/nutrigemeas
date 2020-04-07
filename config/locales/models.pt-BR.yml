@@ -24,7 +24,7 @@
         id: Código
         first_name: Nome
         last_name: Sobrenome
-        sex: Sexo
+        gender: Gênero
         birth_date: Data de nascimento
         cpf: CPF
         street: Logradouro

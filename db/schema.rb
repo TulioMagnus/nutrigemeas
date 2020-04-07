@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20_200_406_140_101) do
     t.string 'last_name'
     t.date 'birth_date'
     t.string 'profession'
-    t.string 'sex'
+    t.string 'gender'
     t.string 'street'
     t.integer 'number'
     t.string 'state'

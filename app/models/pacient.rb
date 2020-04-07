@@ -18,12 +18,12 @@ class Pacient < ApplicationRecord
   end
 
   def self.average_male
-    male = where(sex: 'Homem')
+    male = where(gender: 'Homem')
     male.sum(&:age) / male.count
   end
 
   def self.average_female
-    female = where(sex: 'Mulher')
+    female = where(gender: 'Mulher')
     female.sum(&:age) / female.count
   end
 end
