@@ -9,7 +9,7 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
-every 1.week do
+every 1.minute do
   rake 'pacients:set_status'
 end
 #
