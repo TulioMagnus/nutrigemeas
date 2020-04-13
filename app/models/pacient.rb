@@ -7,8 +7,13 @@ class Pacient < ApplicationRecord
   validates_presence_of %w[first_name last_name birth_date user]
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
-  as_enum :status, %i[inactive active pendent], map: :string
+  as_enum :status, [:active, :inactive, :pending], pluralize_scopes: false
   translate_enum :status
+  before_create :set_pacient_status
+
+  def set_pacient_status
+    pending!
+  end
 
   def full_name
     [first_name, last_name].join(' ')
