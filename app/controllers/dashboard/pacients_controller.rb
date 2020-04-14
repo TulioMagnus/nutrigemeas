@@ -14,7 +14,7 @@ module Dashboard
     # GET /pacients/1
     # GET /pacients/1.json
     def show
-      @appointments = Appointment.where(pacient_id: params[:id]).order('appointment_date DESC')
+      @appointments = Appointment.where(pacient_id: params[:id]).order('appointment_date DESC').page(params[:page])
     end
 
     # GET /pacients/new
