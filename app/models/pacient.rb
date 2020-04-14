@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
 class Pacient < ApplicationRecord
-  include TranslateEnum
   belongs_to :user
   has_many :appointments
   validates_presence_of %w[first_name last_name birth_date user]
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
-  as_enum :status, [:active, :inactive, :pending], pluralize_scopes: false
-  translate_enum :status
-  before_create :set_pacient_status
+  after_create :set_pacient_status, :create_appointment
+  enum status: {
+    active: 0,
+    inactive: 1,
+    pending: 2
+  }
+
+  def create_appointment
+    Appointment.create!(appointment_date: Time.now, pacient_id: id, appointment_type: 'Consulta')
+  end
 
   def set_pacient_status
     pending!

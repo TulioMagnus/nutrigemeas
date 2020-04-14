@@ -18,6 +18,7 @@ class CreatePacients < ActiveRecord::Migration[6.0]
       t.string :email
       t.text :obs
       t.string :phone
+      t.integer :status
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
