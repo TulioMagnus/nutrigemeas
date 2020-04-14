@@ -7,12 +7,12 @@ RSpec.describe Appointment, type: :model do
     described_class.new(
       appointment_date: Faker::Date.birthday(min_age: 18, max_age: 65),
       appointment_type: %w[Consulta Retorno].sample,
-      pacient: Pacient.all.sample
+      patient: Pacient.all.sample
     )
   end
 
   describe 'Associations' do
-    it { should belong_to(:pacient) }
+    it { should belong_to(:patient) }
   end
 
   describe 'Money' do
@@ -22,6 +22,6 @@ RSpec.describe Appointment, type: :model do
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:appointment_date) }
     it { is_expected.to validate_presence_of(:appointment_type) }
-    it { should validate_presence_of(:pacient) }
+    it { should validate_presence_of(:patient) }
   end
 end

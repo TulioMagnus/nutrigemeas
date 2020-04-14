@@ -4,7 +4,7 @@
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1>Pacientes</h1>
-        <%= link_to 'Novo Paciente', new_dashboard_pacient_path %>
+        <%= link_to 'Novo Paciente', new_dashboard_patient_path %>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -25,33 +25,33 @@
   <div class="card card-solid">
     <div class="card-body pb-0">
       <div class="row d-flex align-items-stretch">
-        <% @pacients.each do |pacient| %>
+        <% @patients.each do |patient| %>
           <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
             <div class="card bg-light">
               <div class="card-header text-muted border-bottom-0">
-                <%= pacient.profession %>
+                <%= patient.profession %>
               </div>
               <div class="card-body pt-0">
                 <div class="row">
                   <div class="col-7">
-                    <h2 class="lead"><b><%= pacient.full_name %></b></h2>
-                    <p class="text-muted text-sm"><b><%= pacient.age %> anos</b></p>
+                    <h2 class="lead"><b><%= patient.full_name %></b></h2>
+                    <p class="text-muted text-sm"><b><%= patient.age %> anos</b></p>
                     <ul class="ml-4 mb-0 fa-ul text-muted">
                       <li class="small">
                         <span class="fa-li"><i class="fas fa-lg fa-mobile-alt"></i>
-                        </span> <%= pacient.phone %>
+                        </span> <%= patient.phone %>
                       </li>
                     </ul>
                   </div>
                   <div class="col-5 text-center">
-                    <%= image_tag(pacient.avatar.url(:big), alt:"",
+                    <%= image_tag(patient.avatar.url(:big), alt:"",
                         class:"img-circle img-fluid") %>
                   </div>
                 </div>
               </div>
               <div class="card-footer">
                 <div class="text-right">
-                  <%= link_to dashboard_pacient_path(pacient), class:"btn btn-sm btn-primary" do %>
+                  <%= link_to dashboard_patient_path(patient), class:"btn btn-sm btn-primary" do %>
                     <i class="fas fa-user"></i> Perfil
                   <% end %>
                 </div>
@@ -65,7 +65,7 @@
     <div class="card-footer">
       <nav aria-label="Contacts Page Navigation">
         <ul class="pagination justify-content-center m-0">
-          <%= paginate @pacients %>
+          <%= paginate @patients %>
         </ul>
       </nav>
     </div>

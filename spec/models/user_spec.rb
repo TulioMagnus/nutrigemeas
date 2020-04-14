@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Associations' do
-    it { should have_many(:pacients) }
+    it { should have_many(:patients) }
   end
 
   describe 'Validations' do

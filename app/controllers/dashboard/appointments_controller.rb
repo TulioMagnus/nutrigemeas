@@ -3,7 +3,7 @@
 module Dashboard
   class AppointmentsController < DashboardController
     before_action :set_appointment, only: %i[show edit update destroy]
-    before_action :set_pacient
+    before_action :set_patient
     # GET /appointments
     # GET /appointments.json
     def index
@@ -16,7 +16,7 @@ module Dashboard
 
     # GET /appointments/new
     def new
-      @appointment = @pacient.appointments.build
+      @appointment = @patient.appointments.build
     end
 
     # GET /appointments/1/edit
@@ -25,11 +25,11 @@ module Dashboard
     # POST /appointments
     # POST /appointments.json
     def create
-      @appointment = @pacient.appointments.build(appointment_params)
+      @appointment = @patient.appointments.build(appointment_params)
 
       respond_to do |format|
         if @appointment.save
-          format.html { redirect_to [:dashboard, @pacient], notice: 'Appointment was successfully created.' }
+          format.html { redirect_to [:dashboard, @patient], notice: 'Appointment was successfully created.' }
           format.json { render :show, status: :created, location: @appointment }
         else
           format.html { render :new }
@@ -43,7 +43,7 @@ module Dashboard
     def update
       respond_to do |format|
         if @appointment.update(appointment_params)
-          format.html { redirect_to @pacient, notice: 'Appointment was successfully updated.' }
+          format.html { redirect_to @patient, notice: 'Appointment was successfully updated.' }
           format.json { render :show, status: :ok, location: @appointment }
         else
           format.html { render :edit }
@@ -69,14 +69,14 @@ module Dashboard
       @appointment = Appointment.find(params[:id])
     end
 
-    def set_pacient
-      @pacient = Pacient.find(params[:pacient_id])
+    def set_patient
+      @patient = Pacient.find(params[:patient_id])
     end
 
     # Only allow a list of trusted parameters through.
     def appointment_params
-      params.require(:appointment).permit(:appointment_date, :appointment_type, :pacient_id,
-                                          :price, :payment_status, :price_cents, :pacient)
+      params.require(:appointment).permit(:appointment_date, :appointment_type, :patient_id,
+                                          :price, :payment_status, :price_cents, :patient)
     end
   end
 end

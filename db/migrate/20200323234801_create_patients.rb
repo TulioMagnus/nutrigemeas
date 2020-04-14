@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class CreatePacients < ActiveRecord::Migration[6.0]
+class CreatePatients < ActiveRecord::Migration[6.0]
   def change
-    create_table :pacients do |t|
+    create_table :patients do |t|
       t.string :first_name
       t.string :last_name
       t.date :birth_date

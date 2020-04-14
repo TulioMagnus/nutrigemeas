@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get 'welcome/index'
     get 'statistics/index'
-    resources :pacients do
+    resources :patients do
       resources :appointments
     end
   end

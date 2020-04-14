@@ -7,15 +7,15 @@
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
-              <%= image_tag(@pacient.avatar.url(:medium), alt: 'User profile picture', class:"profile-user-img img-fluid img-circle") if @pacient.avatar %>
+              <%= image_tag(@patient.avatar.url(:medium), alt: 'User profile picture', class:"profile-user-img img-fluid img-circle") if @patient.avatar %>
             </div>
-            <h3 class="profile-username text-center"><%= @pacient.first_name %> <%= @pacient.last_name %></h3>
+            <h3 class="profile-username text-center"><%= @patient.first_name %> <%= @patient.last_name %></h3>
 
-            <p class="text-muted text-center"><%= @pacient.profession %></p>
+            <p class="text-muted text-center"><%= @patient.profession %></p>
 
             <ul class="list-group list-group-unbordered mb-3">
               <li class="list-group-item">
-                <b>Idade: </b> <a class="float-right"><%= @pacient.age %> anos</a>
+                <b>Idade: </b> <a class="float-right"><%= @patient.age %> anos</a>
               </li>
               <li class="list-group-item">
                 <b>Altura:</b> <a class="float-right">xxx</a>
@@ -24,7 +24,7 @@
                 <b>Peso Atual:</b> <a class="float-right">xxx</a>
               </li>
             </ul>
-            <%= link_to 'Editar Cadastro', edit_dashboard_pacient_path(@pacient), class:'btn btn-primary btn-block' %>
+            <%= link_to 'Editar Cadastro', edit_dashboard_patient_path(@patient), class:'btn btn-primary btn-block' %>
           </div>
           <!-- /.card-body -->
         </div>
@@ -43,20 +43,20 @@
           <div class="card-body">
             <div class="tab-content">
               <div class="tab-pane" id="activity">
-                <!-- pacient -->
+                <!-- patient -->
                 <div class="row">
                   <div class="col-md-12">
                     <div class="card">
                       <div class="card-body">
                         <dl>
                           <dt>CPF</dt>
-                          <dd><%= @pacient.cpf %></dd>
+                          <dd><%= @patient.cpf %></dd>
                           <dt>Email</dt>
-                          <dd><%= @pacient.email %></dd>
+                          <dd><%= @patient.email %></dd>
                           <dt>Telefone</dt>
-                          <dd><%= @pacient.phone %></dd>
+                          <dd><%= @patient.phone %></dd>
                           <dt>Endereço</dt>
-                          <dd><%= @pacient.street %>, <%= @pacient.number %>. <%= @pacient.city %>/<%= @pacient.state %></dd>
+                          <dd><%= @patient.street %>, <%= @patient.number %>. <%= @patient.city %>/<%= @patient.state %></dd>
                         </dl>
                       </div>
                       <!-- /.card-body -->
@@ -65,7 +65,7 @@
                   </div>
                   <!-- ./col -->
                 </div>
-                <!-- /.pacient -->
+                <!-- /.patient -->
               </div>
               <!-- /.tab-pane -->
               <div class="active tab-pane" id="timeline">
@@ -74,7 +74,7 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title"><%= link_to 'Nova Consulta', new_dashboard_pacient_appointment_path(@pacient, @appointment) %></h3>
+                        <h3 class="card-title"><%= link_to 'Nova Consulta', new_dashboard_patient_appointment_path(@patient, @appointment) %></h3>
 
                         <div class="card-tools">
                           <div class="input-group input-group-sm" style="width: 150px;">
@@ -140,7 +140,7 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                           <dl>
-                            <dd><%= @pacient.obs %></dd>
+                            <dd><%= @patient.obs %></dd>
                           </dl>
                         </div>
                         <!-- /.card-body -->

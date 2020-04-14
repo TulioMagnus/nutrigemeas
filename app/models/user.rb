@@ -6,5 +6,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates_presence_of :email, :password, :password_confirmation
-  has_many :pacients
+  has_many :patients
 end

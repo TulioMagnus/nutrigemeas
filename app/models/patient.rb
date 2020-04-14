@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-class Pacient < ApplicationRecord
+class Patient < ApplicationRecord
   belongs_to :user
   has_many :appointments
   validates_presence_of %w[first_name last_name birth_date user]
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
-  after_create :set_pacient_status, :create_appointment
+  after_create :set_patient_status, :create_appointment
   enum status: {
     active: 0,
     inactive: 1,
@@ -14,10 +14,10 @@ class Pacient < ApplicationRecord
   }
 
   def create_appointment
-    Appointment.create!(appointment_date: Time.now, pacient_id: id, appointment_type: 'Consulta')
+    Appointment.create!(appointment_date: Time.now, patient_id: id, appointment_type: 'Consulta')
   end
 
-  def set_pacient_status
+  def set_patient_status
     pending!
   end
 

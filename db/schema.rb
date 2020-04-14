@@ -17,16 +17,16 @@ ActiveRecord::Schema.define(version: 2020_04_06_140101) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointment_date"
-    t.bigint "pacient_id", null: false
+    t.bigint "patient_id", null: false
     t.string "appointment_type"
     t.integer "price_cents", default: 0
     t.boolean "payment_status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["pacient_id"], name: "index_appointments_on_pacient_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
-  create_table "pacients", force: :cascade do |t|
+  create_table "patients", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.date "birth_date"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_140101) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_pacients_on_user_id"
+    t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +64,6 @@ ActiveRecord::Schema.define(version: 2020_04_06_140101) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "appointments", "pacients"
-  add_foreign_key "pacients", "users"
+  add_foreign_key "appointments", "patients"
+  add_foreign_key "patients", "users"
 end
