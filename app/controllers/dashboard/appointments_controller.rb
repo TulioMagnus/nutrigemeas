@@ -70,7 +70,7 @@ module Dashboard
     end
 
     def set_patient
-      @patient = Pacient.find(params[:patient_id])
+      @patient = Patient.find(params[:patient_id])
     end
 
     # Only allow a list of trusted parameters through.
