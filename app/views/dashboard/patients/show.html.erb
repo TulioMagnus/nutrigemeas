@@ -74,17 +74,11 @@
                   <div class="col-12">
                     <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title"><%= link_to 'Nova Consulta', new_dashboard_patient_appointment_path(@patient, @appointment) %></h3>
-
-                        <div class="card-tools">
-                          <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                            <div class="input-group-append">
-                              <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                            </div>
-                          </div>
-                        </div>
+                        <h3 class="card-title">
+                          <%= link_to new_dashboard_patient_appointment_path(@patient, @appointment), class:"btn btn-success" do %>
+                            <i class="fas fa-plus-circle"></i>  Nova Consulta
+                          <% end %>
+                        </h3>
                       </div>
                       <!-- /.card-header -->
                       <div class="card-body table-responsive p-0">
@@ -105,7 +99,21 @@
                               <td><%= appointment.appointment_type %></td>
                               <td><%= humanized_money_with_symbol(appointment.price) %></td>
                               <td><%= humanize_boolean(appointment.payment_status) %></td>
-                              <td></td>
+                              <td>
+                                <%= link_to edit_dashboard_patient_appointment_path(@patient, appointment),
+                                    class:"btn btn-warning" do %>
+                                  <i class="fas fa-edit"></i>
+                                <% end %>
+                                <%= link_to duplicate_dashboard_patient_appointment_path(@patient, appointment),
+                                    class:"btn btn-warning" do %>
+                                  <i class="fas fa-copy"></i>
+                                <% end %>
+                                <%= link_to dashboard_patient_appointment_path(@patient, appointment),
+                                    method: :delete, data: {confirm: 'Tem certeza?'},
+                                    class:"btn btn-danger" do %>
+                                  <i class="fas fa-trash-alt"></i>
+                                <% end %>
+                              </td>
                             </tr>
                             <% end %>
                           </tbody>

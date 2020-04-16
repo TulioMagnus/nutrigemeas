@@ -2,7 +2,7 @@
 
 module Dashboard
   class AppointmentsController < DashboardController
-    before_action :set_appointment, only: %i[show edit update destroy]
+    before_action :set_appointment, only: %i[show edit update destroy duplicate]
     before_action :set_patient
     # GET /appointments
     # GET /appointments.json
@@ -17,6 +17,12 @@ module Dashboard
     # GET /appointments/new
     def new
       @appointment = @patient.appointments.build
+    end
+
+    def duplicate
+      new_appointment = @appointment.amoeba_dup
+      new_appointment.save
+      render 'new'
     end
 
     # GET /appointments/1/edit
@@ -43,7 +49,7 @@ module Dashboard
     def update
       respond_to do |format|
         if @appointment.update(appointment_params)
-          format.html { redirect_to @patient, notice: 'Appointment was successfully updated.' }
+          format.html { redirect_to [:dashboard, @patient], notice: 'Appointment was successfully updated.' }
           format.json { render :show, status: :ok, location: @appointment }
         else
           format.html { render :edit }
@@ -57,7 +63,7 @@ module Dashboard
     def destroy
       @appointment.destroy
       respond_to do |format|
-        format.html { redirect_to appointments_url, notice: 'Appointment was successfully destroyed.' }
+        format.html { redirect_to [:dashboard, @patient], notice: 'Appointment was successfully destroyed.' }
         format.json { head :no_content }
       end
     end

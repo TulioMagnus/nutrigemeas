@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     get 'welcome/index'
     get 'statistics/index'
     resources :patients do
-      resources :appointments
+      resources :appointments do
+        member do
+          get 'duplicate'
+        end
+      end
     end
   end
 
