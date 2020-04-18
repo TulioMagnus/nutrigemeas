@@ -20,6 +20,7 @@ import 'bootstrap'
 import "@fortawesome/fontawesome-free/js/all"
 import 'admin-lte'
 import 'overlayscrollbars/js/jquery.overlayScrollbars.js'
+import 'select2/dist/js/select2.js'
 
 $(document).on('turbolinks:load', function() {
   $('body').tooltip({

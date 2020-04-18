@@ -113,3 +113,4 @@ MoneyRails.configure do |_config|
 end
 
 Money.locale_backend = :i18n
+Money.default_currency = :brl

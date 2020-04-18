@@ -10,6 +10,7 @@ namespace :dev do
       show_spinner('Dropping DB...') { `rails db:drop` }
       show_spinner('Creating DB...') { `rails db:create` }
       show_spinner('Migrating DB...') { `rails db:migrate` }
+      show_spinner('Seeding DB...') { `rails db:seed` }
       show_spinner('Adding default user...') { `rails dev:add_default_user` }
       show_spinner('Creating fake patients...') { `rails dev:add_fake_patients` }
       show_spinner('Creating fake appointments...') { `rails dev:add_fake_appointments` }
@@ -37,7 +38,7 @@ namespace :dev do
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
-        gender: %w[Homem Mulher].sample,
+        gender: %w[M F].sample,
         cpf: Faker::IDNumber.brazilian_citizen_number,
         user: User.all.sample,
         email: Faker::Internet.email,

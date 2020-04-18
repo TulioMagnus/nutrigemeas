@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       end
     end
   end
+  get 'tags/:tag', to: 'patients#index', as: :tag
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'

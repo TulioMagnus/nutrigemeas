@@ -4,7 +4,7 @@
       user:
         one: Usuário
         other: Usuários
-      pacient:
+      patient:
         one: Paciente
         other: Pacientes
       Appointment:
@@ -20,7 +20,7 @@
         password_confirmation: Confirmação da Senha
         created_at: Criado em
         updated_at: Atualizado em
-      pacient:
+      patient:
         id: Código
         first_name: Nome
         last_name: Sobrenome

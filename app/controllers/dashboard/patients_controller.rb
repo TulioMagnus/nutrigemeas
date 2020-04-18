@@ -8,7 +8,7 @@ module Dashboard
     # GET /patients.json
     def index
       @q = Patient.ransack(params[:q])
-      @patients = @q.result.order(:first_name).page(params[:page])
+      @patients = @q.result.includes(:tags).order(:first_name).page(params[:page])
     end
 
     # GET /patients/1
@@ -76,7 +76,8 @@ module Dashboard
     def patient_params
       params.require(:patient).permit(:first_name, :last_name, :birth_date, :gender, :street, :number,
                                       :state, :country, :city, :cpf, :obs, :phone, :user_id, :email,
-                                      :avatar, :avatar_cache, :remove_avatar, :professionm, :status)
+                                      :avatar, :avatar_cache, :remove_avatar, :professionm, :status,
+                                      :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
   end
 end
