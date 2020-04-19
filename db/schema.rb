@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_185406) do
+ActiveRecord::Schema.define(version: 2020_04_18_175617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "anamneses", force: :cascade do |t|
+    t.bigint "appointment_id", null: false
+    t.string "reason"
+    t.string "first_reason"
+    t.string "second_reason"
+    t.string "third_reason"
+    t.integer "fourth_reason"
+    t.string "health_situation"
+    t.string "drugs_and_supplements"
+    t.boolean "smoker"
+    t.boolean "alcohol"
+    t.string "alergies"
+    t.string "food_intolerance"
+    t.boolean "hair_loss"
+    t.string "beento_nutri"
+    t.string "bowel"
+    t.string "constipation"
+    t.string "water_consumption"
+    t.string "chewing"
+    t.string "sleep"
+    t.string "stress"
+    t.boolean "exercise"
+    t.string "exercise_type"
+    t.string "exercise_frequency"
+    t.string "exercise_duration"
+    t.integer "exercise_tired"
+    t.string "make_your_food"
+    t.string "eat_out"
+    t.string "can_eat"
+    t.string "cant_eat"
+    t.boolean "drink_soda"
+    t.boolean "drink_juice"
+    t.boolean "fried_food"
+    t.string "fried_frequency"
+    t.boolean "candy"
+    t.string "candy_frequency"
+    t.boolean "legumes_fruits_leaves"
+    t.boolean "oats"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_anamneses_on_appointment_id"
+  end
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointment_date"
@@ -79,6 +122,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_185406) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "anamneses", "appointments"
   add_foreign_key "appointments", "patients"
   add_foreign_key "patients", "users"
   add_foreign_key "taggings", "patients"

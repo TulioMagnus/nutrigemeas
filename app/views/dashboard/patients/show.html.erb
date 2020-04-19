@@ -101,6 +101,10 @@
                               <td><%= humanized_money_with_symbol(appointment.price) %></td>
                               <td><%= humanize_boolean(appointment.payment_status) %></td>
                               <td>
+                                <%= link_to dashboard_patient_appointment_path(@patient, appointment),
+                                    class:"btn btn-success" do %>
+                                  <i class="fas fa-user"></i>
+                                <% end %>
                                 <%= link_to edit_dashboard_patient_appointment_path(@patient, appointment),
                                     class:"btn btn-warning" do %>
                                   <i class="fas fa-edit"></i>
