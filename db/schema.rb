@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_175617) do
     t.boolean "oats"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointment_id"], name: "index_anamneses_on_appointment_id"
+    t.index ["appointment_id"], name: "index_anamneses_on_appointment_id", unique: true
   end
 
   create_table "appointments", force: :cascade do |t|

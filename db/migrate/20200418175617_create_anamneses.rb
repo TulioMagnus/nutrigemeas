@@ -3,7 +3,7 @@
 class CreateAnamneses < ActiveRecord::Migration[6.0]
   def change
     create_table :anamneses do |t|
-      t.references :appointment, null: false, foreign_key: true
+      t.references :appointment, null: false, foreign_key: true, index: { unique: true }
       t.string :reason
       t.string :first_reason
       t.string :second_reason
