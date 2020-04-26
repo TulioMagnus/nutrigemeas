@@ -12,6 +12,10 @@ RSpec.describe Patient, type: :model do
     )
   end
 
+  let(:appointment) { subject.appoimtments.create(appointment_date: Time.now,
+                                                  patient_id: id,
+                                                  appointment_type: 'Consulta') }
+
   describe 'Associations' do
     it { should belong_to(:user) }
   end
