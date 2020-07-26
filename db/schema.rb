@@ -92,21 +92,6 @@ ActiveRecord::Schema.define(version: 2020_04_18_175617) do
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
-    t.bigint "patient_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["patient_id"], name: "index_taggings_on_patient_id"
-    t.index ["tag_id"], name: "index_taggings_on_tag_id"
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -125,6 +110,4 @@ ActiveRecord::Schema.define(version: 2020_04_18_175617) do
   add_foreign_key "anamneses", "appointments"
   add_foreign_key "appointments", "patients"
   add_foreign_key "patients", "users"
-  add_foreign_key "taggings", "patients"
-  add_foreign_key "taggings", "tags"
 end

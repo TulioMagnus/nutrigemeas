@@ -14,11 +14,6 @@
             <div class="input-group-prepend">
               <%= f.submit class:"input-group-text purple lighten-3" %>
             </div>
-            <%= f.search_field :tags_name, class:"form-control my-0 py-1",
-              type:"text", placeholder:"Buscar por TAG" %>
-            <div class="input-group-prepend">
-              <%= f.submit class:"input-group-text purple lighten-3" %>
-            </div>
           <% end %>
         </ol>
       </div>
@@ -45,10 +40,6 @@
                       <li class="small">
                         <span class="fa-li"><i class="fas fa-lg fa-mobile-alt"></i>
                         </span> <%= patient.phone %>
-                      </li>
-                      <li class="small">
-                        <span class="fa-li"><i class="fas fa-lg fa-tag"></i>
-                        </span> <small><%= raw patient.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small>
                       </li>
                     </ul>
                   </div>

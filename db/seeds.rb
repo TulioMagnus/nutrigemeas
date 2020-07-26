@@ -7,10 +7,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Tag.create(name: 'Obeso(a)')
-Tag.create(name: 'Diabético(a)')
-Tag.create(name: 'Emagrecer')
-Tag.create(name: 'Hipertrofia')
 Patient.create(first_name: 'otavio', last_name: 'schwaznegger', birth_date: Time.zone.now,
                profession: 'Senior Ruby on Rails Dev', gender: 'Male', street: 'Rua X',
                number: 15, state: 'RS', country: 'Brazil', city: 'Torres', cpf: '00000000000',

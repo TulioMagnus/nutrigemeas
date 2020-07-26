@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
   gem 'shoulda-matchers'
   gem 'tty-spinner'
+  gem 'foreman'
 end
 
 group :development do

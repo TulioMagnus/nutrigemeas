@@ -8,7 +8,7 @@ module Dashboard
     # GET /patients.json
     def index
       @q = Patient.ransack(params[:q])
-      @patients = @q.result.includes(:tags).order(:first_name).page(params[:page])
+      @patients = @q.result.order(:first_name).page(params[:page])
     end
 
     # GET /patients/1
