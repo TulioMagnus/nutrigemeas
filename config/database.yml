@@ -14,5 +14,5 @@ test:
   database: nutrigemeas_test
 
 production:
-  <<: *defaults
+  url: <%= ENV['DATABASE_URL'] %>
   database: nutrigemeas_production
