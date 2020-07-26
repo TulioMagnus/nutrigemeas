@@ -12,5 +12,5 @@ Patient.create(first_name: 'otavio', last_name: 'schwaznegger', birth_date: Time
                number: 15, state: 'RS', country: 'Brazil', city: 'Torres', cpf: '00000000000',
                email: 'otavioschwanck@gmail.com', obs: 'moreno alto, bonito e sensual',
                phone: '51996312587', status: 'active', user_id: 1)
-User.create(email: 'brunagalcarde@gmail.com', password: '123456', password_confirmation: '123456', first_name: 'Bruna', last_name: 'Alcarde')
-User.create(email: 'carolinagalcarde@gmail.com', password: '123456', password_confirmation: '123456', first_name: 'Carolina', last_name: 'Alcarde')
+User.create(email: 'brunagalcarde@gmail.com', password: '123456', password_confirmation: '123456', first_name: 'Bruna', last_name: 'Alcarde', avatar: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1')
+User.create(email: 'carolinagalcarde@gmail.com', password: '123456', password_confirmation: '123456', first_name: 'Carolina', last_name: 'Alcarde', avatar: 'https://robohash.org/sitsequiquia.png?size=300x300&set=set1')
