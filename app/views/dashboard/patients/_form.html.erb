@@ -1,4 +1,3 @@
-<!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -10,128 +9,104 @@
         </ol>
       </div>
     </div>
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
 
-<!-- Main content -->
 <section class="content">
   <div class="container-fluid">
     <div class="row">
-      <!-- left column -->
       <div class="col-md-12">
-        <!-- general form elements -->
-        <%= simple_form_for([:dashboard, @patient]) do |f| %>
-            <div class="card-body">
-              <!-- First row -->
-              <div class="row">
-                <div class="col-md-2">
-                  <div class="form-group">
-                    <%= f.input :first_name %>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <%= f.input :last_name %>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <%= f.input :birth_date, as: :date, html5: true %>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <%= f.association :user, label_method: :email, value_method: :id, include_blank: false %>
-                  </div>
+        <%= simple_form_for [:dashboard, @patient] do |f| %>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="form-group">
+                  <%= f.input :first_name %>
                 </div>
               </div>
-              <!-- /.First row -->
-              <!-- /.Second row -->
-              <div class="row">
-                <div class="col-md-2">
-                  <div class="form-group">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <%= f.input :last_name %>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.input :birth_date, as: :date, html5: true %>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.association :user, label_method: :email, value_method: :id, include_blank: false %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="form-group">
                   <%= f.input :gender, label: 'Qual é o sexo do cliente?', as: :radio_buttons, collection: [['M', 'Masculino'], ['F', 'Feminino']], label_method: :last, value_method: :first, checked: @patient.gender, item_wrapper_class: 'inline' %>
-                  </div>
                 </div>
-                <div class="col-md-2">
-                  <div class="form-group">
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
                   <%= f.input :cpf %>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <%= f.input :email, as: :email %>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <%= f.input :phone, as: :tel %>
-                  </div>
                 </div>
               </div>
-              <!-- /.Second row -->
-              <!-- /.Third row -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <%= f.input :email, as: :email %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <%= f.input :phone, as: :tel %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
                   <%= f.input :street %>
-                  </div>
                 </div>
-                <div class="col-md-1">
-                  <div class="form-group">
+              </div>
+              <div class="col-md-1">
+                <div class="form-group">
                   <%= f.input :number %>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <%= f.input :city %>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <%= f.input :state %>
-                  </div>
                 </div>
               </div>
-              <!-- /.Third row -->
-              <!-- /.Fourth row -->
-              </div>
-              <!-- /.Fourth row -->
-              <!-- /.Fifth row -->
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                  <%= f.text_area :obs, class: "form-control" %>
-                  </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.input :city %>
                 </div>
               </div>
-              <!-- /.Fifth row -->
-              <!-- /.Sixth row -->
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <%= f.label :avatar do %>
-                      <%= f.file_field :avatar %>
-                      <%= f.hidden_field :avatar_cache %>
-                    <% end %>
-                  </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <%= f.input :state %>
                 </div>
               </div>
-              <!-- /.Sixth row -->
             </div>
-            <!-- /.card-body -->
-            <div class="actions">
-              <%= f.button :submit %>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.text_area :obs, class: "form-control" %>
+              </div>
             </div>
-        <% end %>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <%= f.label :avatar do %>
+                  <%= f.file_field :avatar %>
+                  <%= f.hidden_field :avatar_cache %>
+                <% end %>
+              </div>
+            </div>
+            <%= f.submit 'Salvar' %>
+          </div>
       </div>
-      <!--/.col (left) -->
     </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
+        <% end %>
+  </div>
+  </div>
+  </div>
 </section>
-<!-- /.content -->
-
-
-
-  

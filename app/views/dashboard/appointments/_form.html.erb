@@ -21,31 +21,31 @@
       <div class="col-md-12">
         <!-- general form elements -->
         <%= simple_form_for [:dashboard, @patient, @appointment] do |f| %>
-            <div class="card-body">
-              <!-- First row -->
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <%= f.input :appointment_date, as: :date, html5: true %>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <%= f.input :appointment_type, collection: [ 'Consulta', 'Retorno'] %>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <%= f.input :price %>
-                  </div>
+          <div class="card-body">
+            <!-- First row -->
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.input :appointment_date, as: :date, html5: true %>
                 </div>
               </div>
-              <!-- /.First row -->
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.input :appointment_type, collection: [ 'Consulta', 'Retorno'] %>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.input :price %>
+                </div>
+              </div>
             </div>
-            <!-- /.card-body -->
-            <div class="actions">
-              <%= f.button :submit %>
-            </div>
+            <!-- /.First row -->
+          </div>
+          <!-- /.card-body -->
+          <div class="actions">
+            <%= f.button :submit %>
+          </div>
         <% end %>
       </div>
       <!--/.col (left) -->
