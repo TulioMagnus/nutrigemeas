@@ -11,7 +11,7 @@ GIT
       polyamorous (= 2.3.2)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actioncable (6.0.2.2)
       actionpack (= 6.0.2.2)
@@ -76,6 +76,9 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     amoeba (3.1.0)
       activerecord (>= 3.2.6)
+    annotate (3.1.1)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 14.0)
     apexcharts (0.1.8)
       smart_kv (= 0.2.7)
     ast (2.4.0)
@@ -404,6 +407,7 @@ PLATFORMS
 
 DEPENDENCIES
   amoeba
+  annotate
   apexcharts (~> 0.1.8)
   better_errors (~> 2.6)
   bootsnap (>= 1.4.2)

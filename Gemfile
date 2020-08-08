@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
@@ -28,13 +28,14 @@ gem 'webpacker', '~> 4.0'
 gem 'whenever', require: false
 
 group :development, :test do
+  gem 'annotate'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker', '~> 2.10', '>= 2.10.2'
+  gem 'foreman'
   gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
   gem 'shoulda-matchers'
   gem 'tty-spinner'
-  gem 'foreman'
 end
 
 group :development do

@@ -1,5 +1,38 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: patients
+#
+#  id         :bigint           not null, primary key
+#  avatar     :string
+#  birth_date :date
+#  city       :string
+#  country    :string
+#  cpf        :string
+#  email      :string
+#  first_name :string
+#  gender     :string
+#  last_name  :string
+#  number     :integer
+#  obs        :text
+#  phone      :string
+#  profession :string
+#  state      :string
+#  status     :integer
+#  street     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint           not null
+#
+# Indexes
+#
+#  index_patients_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
 class Patient < ApplicationRecord
   belongs_to :user
   has_many :appointments
@@ -23,6 +56,17 @@ class Patient < ApplicationRecord
 
   def full_name
     [first_name, last_name].join(' ')
+  end
+
+  ransacker :full_name do |parent|
+    Arel::Nodes::InfixOperation.new(
+      '||',
+      Arel::Nodes::InfixOperation.new(
+        '||',
+        parent.table[:first_name], Arel::Nodes.build_quoted(' ')
+      ),
+      parent.table[:last_name]
+    )
   end
 
   def age

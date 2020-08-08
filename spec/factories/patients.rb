@@ -1,5 +1,38 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: patients
+#
+#  id         :bigint           not null, primary key
+#  avatar     :string
+#  birth_date :date
+#  city       :string
+#  country    :string
+#  cpf        :string
+#  email      :string
+#  first_name :string
+#  gender     :string
+#  last_name  :string
+#  number     :integer
+#  obs        :text
+#  phone      :string
+#  profession :string
+#  state      :string
+#  status     :integer
+#  street     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint           not null
+#
+# Indexes
+#
+#  index_patients_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
 FactoryBot.define do
   factory :patient do
     first_name { Faker::Name.first_name }
