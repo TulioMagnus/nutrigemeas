@@ -1,4 +1,3 @@
-<!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -10,47 +9,45 @@
         </ol>
       </div>
     </div>
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
 
-<!-- Main content -->
 <section class="content">
-  <div class="container-fluid">
-    <div class="row">
-      <!-- left column -->
-      <div class="col-md-12">
-        <!-- general form elements -->
-        <%= simple_form_for [:dashboard, @patient, @appointment] do |f| %>
-          <div class="card-body">
-            <!-- First row -->
-            <div class="row">
-              <div class="col-md-3">
-                <div class="form-group">
-                  <%= f.input :appointment_date, as: :date, html5: true %>
+  <div class="card card-default">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <%= simple_form_for [:dashboard, @patient, @appointment] do |f| %>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :appointment_date, as: :date, html5: true %>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <%= f.input :appointment_type, collection: [ 'Consulta', 'Retorno'] %>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :appointment_type, collection: [ 'Consulta', 'Retorno'] %>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <%= f.input :price %>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :price %>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.input :payment_status, as: :select %>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- /.First row -->
-          </div>
-          <!-- /.card-body -->
-          <div class="actions">
-            <%= f.button :submit %>
-          </div>
-        <% end %>
+            <div class="actions">
+              <%= f.button :submit %>
+            </div>
+          <% end %>
+        </div>
       </div>
-      <!--/.col (left) -->
     </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
-<!-- /.content -->

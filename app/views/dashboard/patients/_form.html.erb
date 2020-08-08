@@ -13,33 +13,34 @@
 </section>
 
 <section class="content">
-  <div class="container-fluid">
+  <div class="card card-solid">
+    <div class="card-body">
     <div class="row">
       <div class="col-md-12">
         <%= simple_form_for [:dashboard, @patient] do |f| %>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-2">
                 <div class="form-group">
                   <%= f.input :first_name %>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="form-group">
                   <%= f.input :last_name %>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group">
                   <%= f.input :birth_date, as: :date, html5: true %>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2">
                 <div class="form-group">
-                  <%= f.input :gender, label: 'Qual é o sexo do cliente?', as: :radio_buttons, collection: [['M', 'Masculino'], ['F', 'Feminino']], label_method: :last, value_method: :first, checked: @patient.gender, item_wrapper_class: 'inline' %>
+                  <%= f.input :gender, label: 'Sexo', as: :select, collection: [['male', 'Masculino'], ['female', 'Feminino']], label_method: :last, value_method: :first, checked: @patient.gender, item_wrapper_class: 'inline' %>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2">
                 <div class="form-group">
                   <%= f.association :user, label_method: :first_name, value_method: :id, include_blank: false %>
                 </div>
@@ -63,24 +64,24 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4">
-                <div class="form-group">
-                  <%= f.input :street %>
-                </div>
-              </div>
-              <div class="col-md-1">
-                <div class="form-group">
-                  <%= f.input :number %>
-                </div>
-              </div>
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <div class="form-group">
                   <%= f.input :city %>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="form-group">
                   <%= f.input :state %>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="form-group">
+                  <%= f.input :street %>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <%= f.input :number %>
                 </div>
               </div>
             </div>
@@ -101,9 +102,11 @@
                 <% end %>
               </div>
             </div>
-            <%= f.submit 'Salvar' %>
+            <%= f.submit 'Salvar', class: 'btn btn-primary' %>
           </div>
       </div>
+    </div>
+
     </div>
         <% end %>
   </div>

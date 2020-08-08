@@ -7,7 +7,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.references :patient, null: false, foreign_key: true
       t.string :appointment_type
       t.integer :price_cents, default: 0
-      t.boolean :payment_status, default: false
+      t.boolean :payment_status, default: true
 
       t.timestamps
     end

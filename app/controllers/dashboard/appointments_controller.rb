@@ -4,32 +4,23 @@ module Dashboard
   class AppointmentsController < DashboardController
     before_action :set_appointment, only: %i[show edit update destroy duplicate]
     before_action :set_patient
-    # GET /appointments
-    # GET /appointments.json
-    def index
-      # @appointments = Appointment.order(:first_name).page params[:page]
-    end
+    def index; end
 
-    # GET /appointments/1
-    # GET /appointments/1.json
     def show; end
 
-    # GET /appointments/new
     def new
       @appointment = @patient.appointments.build
     end
 
     def duplicate
       new_appointment = @appointment.amoeba_dup
+      new_appointment.update!(appointment_date: Time.zone.now)
       new_appointment.save
-      render 'new'
+      redirect_to [:dashboard, @patient], notice: 'Consulta Duplicada com Sucesso'
     end
 
-    # GET /appointments/1/edit
     def edit; end
 
-    # POST /appointments
-    # POST /appointments.json
     def create
       @appointment = @patient.appointments.build(appointment_params)
 
@@ -44,8 +35,6 @@ module Dashboard
       end
     end
 
-    # PATCH/PUT /appointments/1
-    # PATCH/PUT /appointments/1.json
     def update
       respond_to do |format|
         if @appointment.update(appointment_params)
@@ -58,8 +47,6 @@ module Dashboard
       end
     end
 
-    # DELETE /appointments/1
-    # DELETE /appointments/1.json
     def destroy
       @appointment.destroy
       respond_to do |format|
@@ -70,7 +57,6 @@ module Dashboard
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_appointment
       @appointment = Appointment.find(params[:id])
     end
@@ -79,7 +65,6 @@ module Dashboard
       @patient = Patient.find(params[:patient_id])
     end
 
-    # Only allow a list of trusted parameters through.
     def appointment_params
       params.require(:appointment).permit(:appointment_date, :appointment_type, :patient_id,
                                           :price, :payment_status, :price_cents, :patient)

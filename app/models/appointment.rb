@@ -7,7 +7,7 @@
 #  id               :bigint           not null, primary key
 #  appointment_date :date
 #  appointment_type :string
-#  payment_status   :boolean          default(FALSE)
+#  payment_status   :boolean          default(TRUE)
 #  price_cents      :integer          default(0)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null

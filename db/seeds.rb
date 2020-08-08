@@ -7,7 +7,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Patient.create(first_name: 'otavio', last_name: 'schwaznegger', birth_date: Time.zone.now,
+Patient.create(first_name: 'Túlio', last_name: 'Magnus', birth_date: Time.zone.now,
                profession: 'Senior Ruby on Rails Dev', gender: 'Male', street: 'Rua X',
                number: 15, state: 'RS', country: 'Brazil', city: 'Torres', cpf: '00000000000',
                email: 'otavioschwanck@gmail.com', obs: 'moreno alto, bonito e sensual',

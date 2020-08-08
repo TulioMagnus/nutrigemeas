@@ -7,7 +7,7 @@
       patient:
         one: Paciente
         other: Pacientes
-      Appointment:
+      appointment:
         one: Consulta
         other: Consultas
     attributes:
@@ -42,3 +42,4 @@
         appointment_type: Tipo de Consulta
         payment_status: Pago?
         price_cents: Valor da Consulta
+        price: Valor da Consulta

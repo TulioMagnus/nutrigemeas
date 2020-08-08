@@ -107,28 +107,31 @@
         <div class="tab-content p-0">
             <!-- Morris chart - Sales -->
             <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 400px;"><div style="display: inline-block; width: 100%;">
-                  <% series = [
-                      name: 'R$', data: @earned_per_month.map { |i,k| [i, humanized_money(k)] }.to_h
+                  <% series1 = [
+                      name: 'R$', data: @earned_per_month.map { |i, k| [i, k / 100] }.to_h
                     ]
                   %>
-                  <% options = {
+                  <% options1 = {
                   title: 'Ganhos',
                   subtitle: 'Agrupadas por mês, nos últimos 12 meses.',
                   ytitle: 'R$',
                   stacked: true
                   } %>
-                  <%= column_chart(series, {**options, theme: 'palette5'}) %> 
+                  <%= column_chart(series1, {**options1, theme: 'palette5'}) %>
               </div>                       
             </div>
             <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 400px;">
               <div style="display: inline-block; width: 100%;">
-                  <% options = {
+                <% series2 = [
+                  name: 'Consultas', data: @appointments_per_month.map { |i, k| [i, k.to_i] }.to_h
+                ] %>
+                  <% options2 = {
                   title: 'Consultas realizadas',
                   subtitle: 'Agrupadas por mês',
                   ytitle: 'Consultas',
                   stacked: true
                   } %>
-                  <%= column_chart @appointments_per_month, {**options, theme: 'palette5'} %> 
+                  <%= column_chart(series2, { **options2, theme: 'pallete4' }) %>
               </div>
             </div>  
         </div>

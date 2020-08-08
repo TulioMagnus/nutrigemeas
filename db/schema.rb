@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_175617) do
     t.bigint "patient_id", null: false
     t.string "appointment_type"
     t.integer "price_cents", default: 0
-    t.boolean "payment_status", default: false
+    t.boolean "payment_status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
