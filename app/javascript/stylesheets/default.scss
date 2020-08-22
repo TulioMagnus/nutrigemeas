@@ -1,0 +1,28 @@
+$nutri-purple: #6600A1;
+
+[class*='sidebar-dark-'] {
+    background-color: $nutri-purple;
+    .sidebar a {
+        color: white
+    }
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid $nutri-purple;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #ffffff;
+    background-color: $nutri-purple;
+}
+
+input.input-group-text.purple.lighten-3 {
+    background-color: $nutri-purple;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: $nutri-purple;
+    border-color: $nutri-purple;
+}

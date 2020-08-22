@@ -1,18 +1,14 @@
-<!-- Main content -->
 <section class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
-        <!-- Profile avatar -->
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
               <%= image_tag(@patient.avatar.url(:medium), alt: 'User profile picture', class:"profile-user-img img-fluid img-circle") if @patient.avatar %>
             </div>
             <h3 class="profile-username text-center"><%= @patient.first_name %> <%= @patient.last_name %></h3>
-
             <p class="text-muted text-center"><%= @patient.profession %></p>
-
             <ul class="list-group list-group-unbordered mb-3">
               <li class="list-group-item">
                 <b>Idade: </b> <a class="float-right"><%= @patient.age %> anos</a>
@@ -26,11 +22,8 @@
             </ul>
             <%= link_to 'Editar Cadastro', edit_dashboard_patient_path(@patient), class:'btn btn-primary btn-block' %>
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col -->
       <div class="col-md-9">
         <div class="card">
           <div class="card-header p-2">
@@ -39,11 +32,10 @@
               <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Geral</a></li>
               <li class="nav-item"><a class="nav-link" href="#obs" data-toggle="tab">Observações</a></li>
             </ul>
-          </div><!-- /.card-header -->
+          </div>
           <div class="card-body">
             <div class="tab-content">
               <div class="tab-pane" id="activity">
-                <!-- patient -->
                 <div class="row">
                   <div class="col-md-12">
                     <div class="card">
@@ -59,17 +51,17 @@
                           <dd><%= @patient.street %>, <%= @patient.number %>. <%= @patient.city %>/<%= @patient.state %></dd>
                         </dl>
                       </div>
-                      <!-- /.card-body -->
+
                     </div>
-                    <!-- /.card -->
+
                   </div>
-                  <!-- ./col -->
+
                 </div>
-                <!-- /.patient -->
+
               </div>
-              <!-- /.tab-pane -->
+
               <div class="active tab-pane" id="timeline">
-                <!-- The timeline -->
+
                 <div class="row">
                   <div class="col-12">
                     <div class="card">
@@ -80,7 +72,7 @@
                           <% end %>
                         </h3>
                       </div>
-                      <!-- /.card-header -->
+
                       <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">
                           <thead>
@@ -94,36 +86,36 @@
                           </thead>
                           <tbody>
                             <% @appointments.each do |appointment| %>
-                            <tr>
-                              <td><%= l appointment.appointment_date, format: :default %></td>
-                              <td><%= appointment.appointment_type %></td>
-                              <td><%= humanized_money_with_symbol(appointment.price) %></td>
-                              <td><%= humanize_boolean(appointment.payment_status) %></td>
-                              <td>
-                                <%= link_to dashboard_patient_appointment_path(@patient, appointment),
-                                    class:"btn btn-success" do %>
-                                  <i class="fas fa-user"></i>
-                                <% end %>
-                                <%= link_to edit_dashboard_patient_appointment_path(@patient, appointment),
-                                    class:"btn btn-warning" do %>
-                                  <i class="fas fa-edit"></i>
-                                <% end %>
-                                <%= link_to duplicate_dashboard_patient_appointment_path(@patient, appointment),
-                                    class:"btn btn-warning" do %>
-                                  <i class="fas fa-copy"></i>
-                                <% end %>
-                                <%= link_to dashboard_patient_appointment_path(@patient, appointment),
-                                    method: :delete, data: {confirm: 'Tem certeza?'},
-                                    class:"btn btn-danger" do %>
-                                  <i class="fas fa-trash-alt"></i>
-                                <% end %>
-                              </td>
-                            </tr>
+                              <tr>
+                                <td><%= l appointment.appointment_date, format: :default %></td>
+                                <td><%= appointment.appointment_type %></td>
+                                <td><%= humanized_money_with_symbol(appointment.price) %></td>
+                                <td><%= humanize_boolean(appointment.payment_status) %></td>
+                                <td>
+                                  <%= link_to dashboard_patient_appointment_path(@patient, appointment),
+                                   class:"btn btn-success" do %>
+                                    <i class="fas fa-user"></i>
+                                  <% end %>
+                                  <%= link_to edit_dashboard_patient_appointment_path(@patient, appointment),
+                                   class:"btn btn-warning" do %>
+                                    <i class="fas fa-edit"></i>
+                                  <% end %>
+                                  <%= link_to duplicate_dashboard_patient_appointment_path(@patient, appointment),
+                                   class:"btn btn-warning" do %>
+                                    <i class="fas fa-copy"></i>
+                                  <% end %>
+                                  <%= link_to dashboard_patient_appointment_path(@patient, appointment),
+                                   method: :delete, data: {confirm: 'Tem certeza?'},
+                                   class:"btn btn-danger" do %>
+                                    <i class="fas fa-trash-alt"></i>
+                                  <% end %>
+                                </td>
+                              </tr>
                             <% end %>
                           </tbody>
                         </table>
                       </div>
-                      <!-- /.card-body -->
+
                       <div class="card-footer">
                         <nav aria-label="Contacts Page Navigation">
                           <ul class="pagination justify-content-center m-0">
@@ -131,47 +123,33 @@
                           </ul>
                         </nav>
                       </div>
-                      <!-- /.card-footer -->
                     </div>
-                    <!-- /.card -->
                   </div>
                 </div>
               </div>
-              <!-- /.tab-pane -->
               <div class="tab-pane" id="obs">
-                <!-- The obs -->
                 <div class="row">
-                    <div class="col-md-12">
-                      <div class="card">
-                        <div class="card-header">
-                          <h3 class="card-title">
-                            <i class="fas fa-address-card"></i>
-                            Observações
-                          </h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                          <dl>
-                            <dd><%= @patient.obs %></dd>
-                          </dl>
-                        </div>
-                        <!-- /.card-body -->
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">
+                          <i class="fas fa-address-card"></i>
+                          Observações
+                        </h3>
                       </div>
-                      <!-- /.card -->
+                      <div class="card-body">
+                        <dl>
+                          <dd><%= @patient.obs %></dd>
+                        </dl>
+                      </div>
                     </div>
-                    <!-- ./col -->
                   </div>
+                </div>
               </div>
-              <!-- /.tab-pane -->
             </div>
-            <!-- /.tab-content -->
-          </div><!-- /.card-body -->
+          </div>
         </div>
-        <!-- /.nav-tabs-custom -->
       </div>
-      <!-- /.col -->
     </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
-<!-- /.content -->

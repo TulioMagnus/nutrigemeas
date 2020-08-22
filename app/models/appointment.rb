@@ -31,4 +31,10 @@ class Appointment < ApplicationRecord
   amoeba do
     enable
   end
+
+  def age_on_appointment
+    ad = appointment_date
+    dob = patient.birth_date
+    ad.year - dob.year - (ad.month > dob.month || (ad.month == dob.month && ad.day >= dob.day) ? 0 : 1)
+  end
 end
