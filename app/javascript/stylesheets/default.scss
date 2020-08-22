@@ -1,18 +1,24 @@
 $nutri-purple: #6600A1;
 $white: #FFFFFF;
+$light-grey: #F8F8F8;
 
 [class*='sidebar-dark-'] {
-    background-color: $nutri-purple;
+    background-color: $light-grey;
     .sidebar a {
-        color: $white
+        color: $nutri-purple
     }
     .user-panel {
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid $nutri-purple;
     }
     .brand-link {
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid $nutri-purple;
         color: rgba(255, 255, 255, 0.8);
+        background-color: $nutri-purple;
     }
+}
+
+.bg-success {
+    background-color: $nutri-purple !important;
 }
 
 .card-primary.card-outline {
@@ -33,4 +39,39 @@ input.input-group-text.purple.lighten-3 {
 .btn-primary {
     background-color: $nutri-purple;
     border-color: $nutri-purple;
+}
+
+.btn-success {
+    background-color: $nutri-purple;
+    border-color: $nutri-purple;
+}
+
+.btn-warning {
+    background-color: transparent;
+    border-color: $nutri-purple;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #ffffff;
+    background-color: $nutri-purple;
+    border-color: $white;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: black;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+.profile-user-img {
+    border: 3px solid $nutri-purple;
+    margin: 0 auto;
+    padding: 3px;
+    width: 100px;
 }
