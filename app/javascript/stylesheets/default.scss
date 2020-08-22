@@ -1,9 +1,17 @@
 $nutri-purple: #6600A1;
+$white: #FFFFFF;
 
 [class*='sidebar-dark-'] {
     background-color: $nutri-purple;
     .sidebar a {
-        color: white
+        color: $white
+    }
+    .user-panel {
+        border-bottom: 1px solid $white;
+    }
+    .brand-link {
+        border-bottom: 1px solid $white;
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
@@ -12,13 +20,13 @@ $nutri-purple: #6600A1;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #ffffff;
+    color: $white;
     background-color: $nutri-purple;
 }
 
 input.input-group-text.purple.lighten-3 {
     background-color: $nutri-purple;
-    color: #FFFFFF;
+    color: $white;
     border-radius: 10px;
 }
 
