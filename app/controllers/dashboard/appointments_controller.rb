@@ -4,6 +4,8 @@ module Dashboard
   class AppointmentsController < DashboardController
     before_action :set_appointment, only: %i[show edit update destroy duplicate]
     before_action :set_patient
+    before_action :set_anamnesis
+
     def index; end
 
     def show; end
@@ -54,6 +56,10 @@ module Dashboard
 
     def set_appointment
       @appointment = Appointment.find(params[:id])
+    end
+
+    def set_anamnesis
+      @anamnesis = @appointment.anamnesis
     end
 
     def set_patient

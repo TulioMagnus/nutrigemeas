@@ -16,7 +16,7 @@ module Dashboard
     private
 
     def set_anamnesis
-      @anamnesis = Anamnesis.find_by(params[:id])
+      @anamnesis = Anamnesis.find(params[:id])
     end
 
     def set_appointment

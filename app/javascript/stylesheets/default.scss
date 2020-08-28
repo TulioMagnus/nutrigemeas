@@ -1,4 +1,5 @@
 $nutri-purple: #6600A1;
+$nutri-darker-purple: #350052;
 $white: #FFFFFF;
 $light-grey: #F8F8F8;
 
@@ -6,6 +7,9 @@ $light-grey: #F8F8F8;
     background-color: $light-grey;
     .sidebar a {
         color: $nutri-purple
+    }
+    .sidebar a:hover {
+        color: $nutri-darker-purple
     }
     .user-panel {
         border-bottom: 1px solid $nutri-purple;
@@ -41,9 +45,21 @@ input.input-group-text.purple.lighten-3 {
     border-color: $nutri-purple;
 }
 
+.btn-primary:hover {
+    color: $white;
+    background-color: $nutri-darker-purple;
+    border-color: $nutri-darker-purple;
+}
+
 .btn-success {
     background-color: $nutri-purple;
     border-color: $nutri-purple;
+}
+
+.btn-success:hover {
+    color: $white;
+    background-color: $nutri-darker-purple;
+    border-color: $nutri-darker-purple;
 }
 
 .btn-warning {
