@@ -53,18 +53,12 @@
         </div>
         <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
           <div class="text-center">
-            <button type="button" class="btn btn-block bg-gradient-success">Anamnese</button>
-            <button type="button" class="btn btn-block bg-gradient-info">Info</button>
-            <button type="button" class="btn btn-block bg-gradient-info">Info</button>
-            <button type="button" class="btn btn-block bg-gradient-info">Info</button>
-            <button type="button" class="btn btn-block bg-gradient-info">Info</button>
+            <%= link_to edit_dashboard_patient_appointment_anamnesi_path(@patient, @appointment, @anamnesis), class:"btn btn-success" do %>
+              <i class="fas fa-plus-circle"></i>  Anamnese
+            <% end %>
           </div>
         </div>
       </div>
     </div>
-    <!-- /.card-body -->
   </div>
-  <!-- /.card -->
-
 </section>
-<!-- /.content -->

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'statistics/index'
     resources :patients do
       resources :appointments do
+        resources :anamnesis
         member do
           get 'duplicate'
         end

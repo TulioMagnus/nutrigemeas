@@ -28,6 +28,8 @@ class Appointment < ApplicationRecord
   paginates_per 5
   validates_presence_of %w[appointment_date appointment_type patient]
 
+  after_create :auto_create_anamnesis
+
   amoeba do
     enable
   end
@@ -36,5 +38,9 @@ class Appointment < ApplicationRecord
     ad = appointment_date
     dob = patient.birth_date
     ad.year - dob.year - (ad.month > dob.month || (ad.month == dob.month && ad.day >= dob.day) ? 0 : 1)
+  end
+
+  def auto_create_anamnesis
+    self.anamnesis = build_anamnesis
   end
 end
