@@ -6,41 +6,43 @@
 #
 #  id                    :bigint           not null, primary key
 #  alcohol               :boolean
-#  alergies              :string
-#  beento_nutri          :string
-#  bowel                 :string
-#  can_eat               :string
+#  alergies              :text
+#  beento_nutri          :text
+#  bowel                 :text
+#  brystol               :integer
+#  can_eat               :text
 #  candy                 :boolean
-#  candy_frequency       :string
-#  cant_eat              :string
-#  chewing               :string
-#  constipation          :string
+#  candy_frequency       :text
+#  cant_eat              :text
+#  chewing               :text
+#  constipation          :text
 #  drink_juice           :boolean
 #  drink_soda            :boolean
-#  drugs_and_supplements :string
-#  eat_out               :string
+#  drugs_and_supplements :text
+#  eat_out               :text
 #  exercise              :boolean
-#  exercise_duration     :string
-#  exercise_frequency    :string
+#  exercise_duration     :text
+#  exercise_frequency    :text
 #  exercise_tired        :integer
-#  exercise_type         :string
-#  first_reason          :string
-#  food_intolerance      :string
+#  exercise_type         :text
+#  first_reason          :text
+#  food_intolerance      :text
 #  fourth_reason         :integer
 #  fried_food            :boolean
-#  fried_frequency       :string
+#  fried_frequency       :text
 #  hair_loss             :boolean
-#  health_situation      :string
+#  health_situation      :text
 #  legumes_fruits_leaves :boolean
-#  make_your_food        :string
+#  make_your_food        :text
 #  oats                  :boolean
-#  reason                :string
-#  second_reason         :string
-#  sleep                 :string
+#  reason                :text
+#  second_reason         :text
+#  sleep                 :text
 #  smoker                :boolean
-#  stress                :string
-#  third_reason          :string
-#  water_consumption     :string
+#  stress                :text
+#  third_reason          :integer
+#  urine                 :integer
+#  water_consumption     :text
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #  appointment_id        :bigint           not null

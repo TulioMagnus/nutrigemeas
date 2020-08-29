@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      anamnesis:
+        one: Anamnese
+        other: Anamneses
+
+    attributes:
+      anamnesis:
+        reason: Qual é o motivo/objetivo da consulta?

@@ -12,18 +12,52 @@ pt-BR:
     error_notification:
       default_message: "Por favor, veja os problemas abaixo"
     # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+    labels:
+      defaults:
+        reason: 'Qual o motivo da consulta/objetivo?'
+        first_reason: 'O que você já tentou para alcançar esse objetivo?'
+        second_reason: 'Quais são suas maiores dificuldades?'
+        third_reason: 'De 0 a 10, qual é o tamanho do seu comprometimento em seguir todas as minhas orientações?'
+        alcohol: 'Ingere Álcool?'
+        alergies: 'Possui alergias e/ou intolerâncias alimentares?'
+        beento_nutri: 'Já foi em um nutricionista ou fez alguma dieta por conta própria? Teve sucesso? Se não teve, por quê?'
+        bowel: 'Como funciona o seu intestino?'
+        can_eat: 'O que gosta de comer?'
+        candy: 'Consome doces?'
+        candy_frequency: 'Com que frequência come doces?'
+        cant_eat: 'O que não gosta de comer?'
+        chewing: 'Como é a sua mastigação?'
+        constipation: 'Tem constipação, flatulência, distensão abdominal,  diarreia?'
+        drink_juice: 'Bebe suco?'
+        drink_soda: 'Bebe refrigerante?'
+        drugs_and_supplements: 'Utiliza algum medicamento? Suplemento?'
+        eat_out: 'Costuma comer fora?'
+        exercise: 'Você se exercita?'
+        exercise_duration: 'Qual a duração do exercício?'
+        exercise_frequency: 'Qual a frequência do exercício?'
+        exercise_tired: 'Se sente cansado ao praticar exercícios?'
+        brystol: 'Escala de Bristol'
+        urine: 'Escala de cor da Urina'
+        exercise_type: 'Quais tipos de exercicio pratica?'
+        food_intolerance: 'Possui intolerância alimentar?'
+        fried_food: 'Come frituras?'
+        fried_frequency: 'Come frituras com frequência?'
+        hair_loss: 'Você nota muita queda de cabelo?'
+        health_situation: 'Possui algum problema de saúde?'
+        legumes_fruits_leaves: 'Come/comeria frutas, legumes e vegetais?'
+        make_your_food: 'Cozinha seu próprio alimento?'
+        oats: 'Come/comeria aveia?'
+        sleep: 'Como é o seu sono?'
+        smoker: 'Você fuma?'
+        stress: 'Se sente estressado?'
+        water_consumption: 'Quantos litros de água bebe por dia?'
+    hints:
+      defaults:
+        health_situation: 'Hipertensão, diabetes, colesterol alto, doenças cardiovasculares, hipo e hipertireoidismo, doença renal, câncer...'
+        smoker: 'Pode ocasionar doenças cardiovasculares, câncer, doenças respiratórias, impotência sexual, envelhecimento precoce...'
+        hair_loss: 'Falta de vitamina D, zinco, ferro, biotina, problemas na tireóide, estresse...'
+        chewing: 'Lenta, moderada, rápida?'
+        sleep: 'Dorme bem? Costuma acordar na madrugada? Quantas horas por dia?'
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'
