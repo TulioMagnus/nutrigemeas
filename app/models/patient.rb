@@ -47,7 +47,7 @@ class Patient < ApplicationRecord
   }
 
   def create_appointment
-    Appointment.create!(appointment_date: Time.now, patient_id: id, appointment_type: 'Consulta')
+    Appointment.create!(appointment_date: Time.zone.now, patient_id: id, appointment_type: :appointment)
   end
 
   def set_patient_status

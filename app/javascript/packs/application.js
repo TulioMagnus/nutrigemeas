@@ -16,6 +16,7 @@ import 'admin-lte'
 import 'jquery-mask-plugin/dist/jquery.mask.min'
 import 'overlayscrollbars/js/jquery.overlayScrollbars.js'
 import 'select2/dist/js/select2.js'
+import 'jquery-mask-plugin/dist/jquery.mask.min'
 
 import './utils'
 import './masks'

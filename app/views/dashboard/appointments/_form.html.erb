@@ -27,17 +27,17 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <%= f.input :appointment_type, collection: [ 'Consulta', 'Retorno'] %>
+                    <%= f.input :appointment_type, as: :select, collection: Appointment.translated_appointment_types %>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <%= f.input :price, input_html: { class: 'input--brl-money' } %>
+        <%= f.input :formatted_price, as: :string, input_html: { class: 'input--brl-money input--brl-money-public' } %>
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <%= f.input :payment_status, as: :select, collection: [['Sim', true], ['Não', false]], include_blank: false %>
+                    <%= f.input :payment_status, as: :select, collection: Appointment.translated_payment_statuses, include_blank: false %>
                   </div>
                 </div>
               </div>

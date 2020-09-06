@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 2020_04_18_175617) do
   create_table "appointments", force: :cascade do |t|
     t.date "appointment_date"
     t.bigint "patient_id", null: false
-    t.string "appointment_type"
-    t.integer "price_cents", default: 0
-    t.boolean "payment_status", default: true
+    t.string "appointment_type_cd"
+    t.decimal "price", default: "0.0"
+    t.string "payment_status_cd", default: "yes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_appointments_on_patient_id"

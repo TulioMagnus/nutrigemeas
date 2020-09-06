@@ -38,8 +38,13 @@
         user: Nutri responsável
         avatar: Foto do Paciente
       appointment:
+        payment_status: Pago?
+        payment_status_list:
+          yes: Sim
+          no: Não
         appointment_date: Data da Consulta
         appointment_type: Tipo de Consulta
-        payment_status: Pago?
-        price_cents: Valor da Consulta
+        appointment_type_list:
+          appointment: Consulta
+          return: Retorno
         price: Valor da Consulta

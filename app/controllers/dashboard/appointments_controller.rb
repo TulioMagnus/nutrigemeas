@@ -68,7 +68,7 @@ module Dashboard
 
     def appointment_params
       params.require(:appointment).permit(:appointment_date, :appointment_type, :patient_id,
-                                          :price, :payment_status, :price_cents, :patient)
+                                          :price, :payment_status, :formatted_price, :patient)
     end
   end
 end

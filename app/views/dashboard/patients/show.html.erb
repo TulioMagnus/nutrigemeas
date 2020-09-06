@@ -88,9 +88,9 @@
                             <% @appointments.each do |appointment| %>
                               <tr>
                                 <td><%= l appointment.appointment_date, format: :default %></td>
-                                <td><%= appointment.appointment_type %></td>
-                                <td><%= humanized_money_with_symbol(appointment.price) %></td>
-                                <td><%= humanize_boolean(appointment.payment_status) %></td>
+                                <td><%= appointment.translated_appointment_type %></td>
+                                <td><%= appointment.formatted_price %></td>
+                                <td><%= appointment.translated_payment_status %></td>
                                 <td>
                                   <%= link_to dashboard_patient_appointment_path(@patient, appointment),
                                    class:"btn btn-success" do %>

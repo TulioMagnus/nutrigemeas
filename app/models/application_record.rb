@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class ApplicationRecord < ActiveRecord::Base
+  extend ImplementsMoneyNumber
+
   self.abstract_class = true
+  include TranslateEnum
 
   def self.define_attributes_translation(attributes)
     hash = { model_name.i18n_key => attributes }

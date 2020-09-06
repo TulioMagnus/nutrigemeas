@@ -4,14 +4,14 @@
 #
 # Table name: appointments
 #
-#  id               :bigint           not null, primary key
-#  appointment_date :date
-#  appointment_type :string
-#  payment_status   :boolean          default(TRUE)
-#  price_cents      :integer          default(0)
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  patient_id       :bigint           not null
+#  id                  :bigint           not null, primary key
+#  appointment_date    :date
+#  appointment_type_cd :string
+#  payment_status_cd   :string           default("yes")
+#  price               :decimal(, )      default(0.0)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  patient_id          :bigint           not null
 #
 # Indexes
 #

@@ -1,204 +1,122 @@
 <div class="content-header">
   <div class="container-fluid">
-  <div class="row mb-2">
+    <div class="row mb-2">
       <div class="col-sm-6">
-      <h1 class="m-0 text-dark">Painel</h1>
-      </div><!-- /.col -->
+        <h1 class="m-0 text-dark">Painel</h1>
+      </div>
       <div class="col-sm-6">
-
-      </div><!-- /.col -->
-  </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
+      </div>
+    </div>
+  </div>
 </div>
-<!-- /.content-header -->
 
-<!-- Main content -->
 <section class="content">
   <div class="container-fluid">
-  <!-- Small boxes (Stat box) -->
-  <div class="row">
+    <div class="row">
       <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-info">
+        <div class="small-box bg-info">
           <div class="inner">
-          <h3><%= @count_patients %></h3>
-
-          <p>Patientes cadastrados</p>
+            <h3><%= @count_patients %></h3>
+            <p>Patientes cadastrados</p>
           </div>
           <div class="icon">
-          <i class="ion ion-person"></i>
+            <i class="ion ion-person"></i>
           </div>
           <%= link_to dashboard_patients_path, class:"small-box-footer" do %>
             Clientes <i class="fas fa-arrow-circle-right"></i>
           <% end %>
-      </div>
-      </div>
-      <!-- ./col -->
-      <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-success">
-          <div class="inner">
-          <h3><%= @count_appointments %></h3>
-
-          <p>Consultas realizadas</p>
-          </div>
-          <div class="icon">
-          <i class="ion ion-stats-bars"></i>
-          </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-      </div>
-      <!-- ./col -->
-      <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-warning">
-          <div class="inner">
-          <h3>R$<%= humanized_money @total_earned %></h3>
-
-          <p>Total ganho</p>
-          </div>
-          <div class="icon">
-          <i class="ion ion-cash"></i>
-          </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-      </div>
-      <!-- ./col -->
-      <div class="col-lg-3 col-6">
-      <!-- small box -->
-      <div class="small-box bg-danger">
-          <div class="inner">
-          <h3><%= humanized_money_with_symbol(@total_to_earn) %></h3>
-
-          <p>A receber</p>
-          </div>
-          <div class="icon">
-          <i class="ion ion-card"></i>
-          </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-      </div>
-      </div>
-      <!-- ./col -->
-  </div>
-  <!-- /.row -->
-  <!-- Main row -->
-  <div class="row">
-    <!-- Left col -->
-    <section class="col-lg-12 connectedSortable ui-sortable">
-    <!-- Custom tabs (Charts with tabs)-->
-    <div class="card">
-        <div class="card-header ui-sortable-handle" style="cursor: move;">
-        <h3 class="card-title">
-            <i class="fas fa-chart-pie mr-1"></i>
-            Gráficos
-        </h3>
-        <div class="card-tools">
-            <ul class="nav nav-pills ml-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Ganhos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#sales-chart" data-toggle="tab">Consultas</a>
-            </li>
-            </ul>
         </div>
-        </div><!-- /.card-header -->
-        <div class="card-body">
-        <div class="tab-content p-0">
-            <!-- Morris chart - Sales -->
-            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 400px;"><div style="display: inline-block; width: 100%;">
-                  <% series1 = [
-                      name: 'R$', data: @earned_per_month.map { |i, k| [i, k / 100] }.to_h
-                    ]
-                  %>
-                  <% options1 = {
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3><%= @count_appointments %></h3>
+            <p>Consultas realizadas</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+          </div>
+          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="small-box bg-warning">
+          <div class="inner">
+            <h3>R$<%= @total_earned %></h3>
+            <p>Total ganho</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-cash"></i>
+          </div>
+          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6">
+        <div class="small-box bg-danger">
+          <div class="inner">
+            <h3><%= @total_to_earn %></h3>
+            <p>A receber</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-card"></i>
+          </div>
+          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <section class="col-lg-12 connectedSortable ui-sortable">
+        <div class="card">
+          <div class="card-header ui-sortable-handle" style="cursor: move;">
+            <h3 class="card-title">
+              <i class="fas fa-chart-pie mr-1"></i>
+              Gráficos
+            </h3>
+            <div class="card-tools">
+              <ul class="nav nav-pills ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Ganhos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#sales-chart" data-toggle="tab">Consultas</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="tab-content p-0">
+              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 400px;"><div style="display: inline-block; width: 100%;">
+                <% series1 = [
+                  name: 'R$', data: @earned_per_month
+                ]
+                %>
+                <% options1 = {
                   title: 'Ganhos',
                   subtitle: 'Agrupadas por mês, nos últimos 12 meses.',
                   ytitle: 'R$',
                   stacked: true
-                  } %>
-                  <%= column_chart(series1, {**options1, theme: 'palette5'}) %>
+                } %>
+                <%= column_chart(series1, {**options1, theme: 'palette5'}) %>
               </div>                       
-            </div>
-            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 400px;">
-              <div style="display: inline-block; width: 100%;">
-                <% series2 = [
-                  name: 'Consultas', data: @appointments_per_month.map { |i, k| [i, k.to_i] }.to_h
-                ] %>
+              </div>
+              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 400px;">
+                <div style="display: inline-block; width: 100%;">
+                  <% series2 = [
+                    name: 'Consultas', data: @appointments_per_month.map { |i, k| [i, k.to_i] }.to_h
+                  ] %>
                   <% options2 = {
-                  title: 'Consultas realizadas',
-                  subtitle: 'Agrupadas por mês',
-                  ytitle: 'Consultas',
-                  stacked: true
+                    title: 'Consultas realizadas',
+                    subtitle: 'Agrupadas por mês',
+                    ytitle: 'Consultas',
+                    stacked: true
                   } %>
                   <%= column_chart(series2, { **options2, theme: 'pallete4' }) %>
+                </div>
               </div>
-            </div>  
-        </div>
-        </div><!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-    </section>
-    <!-- /.Left col -->
-    <!-- right col (We are only adding the ID to make the widgets sortable)-->
-    <section class="col-lg-12 connectedSortable ui-sortable">
-
-    <!-- Calendar -->
-    <div class="card">
-        <div class="card-header ui-sortable-handle" style="cursor: move;">
-        <h3 class="card-title">
-            <i class="fas fa-chart-pie mr-1"></i>
-            Gráficos
-        </h3>
-        <div class="card-tools">
-            <ul class="nav nav-pills ml-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Ganhos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#sales-chart" data-toggle="tab">Consultas</a>
-            </li>
-            </ul>
-        </div>
-        </div><!-- /.card-header -->
-        <div class="card-body">
-        <div class="tab-content p-0">
-            <!-- Morris chart - Sales -->
-            <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 400px;"><div style="display: inline-block; width: 100%;">
-                  <% series = [
-                      name: 'R$', data: @earned_per_month.map { |i,k| [i, humanized_money(k)] }.to_h
-                    ]
-                  %>
-                  <% options = {
-                  title: 'Ganhos',
-                  subtitle: 'Agrupadas por mês, nos últimos 12 meses.',
-                  ytitle: 'R$',
-                  stacked: true
-                  } %>
-                  <%= column_chart(series, {**options, theme: 'palette5'}) %> 
-              </div>                       
             </div>
-            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 400px;">
-              <div style="display: inline-block; width: 100%;">
-                  <% options = {
-                  title: 'Consultas realizadas',
-                  subtitle: 'Agrupadas por mês',
-                  ytitle: 'Consultas',
-                  stacked: true
-                  } %>
-                  <%= column_chart @appointments_per_month, {**options, theme: 'palette5'} %> 
-              </div>
-            </div>  
+          </div>
         </div>
-        </div><!-- /.card-body -->
+      </section>
     </div>
-    <!-- /.card -->
-    </section>
-    <!-- right col -->
   </div>
-  <!-- /.row (main row) -->
-  </div><!-- /.container-fluid -->
 </section>
-<!-- /.content -->
-
-<%= donut_chart([25, 100, 200, 125], theme: 'palette4') %>
