@@ -10,55 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_175617) do
+ActiveRecord::Schema.define(version: 2020_04_06_140101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "anamneses", force: :cascade do |t|
-    t.bigint "appointment_id", null: false
-    t.text "reason"
-    t.text "first_reason"
-    t.text "second_reason"
-    t.integer "third_reason"
-    t.integer "fourth_reason"
-    t.integer "brystol"
-    t.integer "urine"
-    t.text "health_situation"
-    t.text "drugs_and_supplements"
-    t.boolean "smoker"
-    t.boolean "alcohol"
-    t.text "alergies"
-    t.text "food_intolerance"
-    t.boolean "hair_loss"
-    t.text "beento_nutri"
-    t.text "bowel"
-    t.text "constipation"
-    t.text "water_consumption"
-    t.text "chewing"
-    t.text "sleep"
-    t.text "stress"
-    t.boolean "exercise"
-    t.text "exercise_type"
-    t.text "exercise_frequency"
-    t.text "exercise_duration"
-    t.integer "exercise_tired"
-    t.text "make_your_food"
-    t.text "eat_out"
-    t.text "can_eat"
-    t.text "cant_eat"
-    t.boolean "drink_soda"
-    t.boolean "drink_juice"
-    t.boolean "fried_food"
-    t.text "fried_frequency"
-    t.boolean "candy"
-    t.text "candy_frequency"
-    t.boolean "legumes_fruits_leaves"
-    t.boolean "oats"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["appointment_id"], name: "index_anamneses_on_appointment_id", unique: true
-  end
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointment_date"
@@ -109,7 +64,6 @@ ActiveRecord::Schema.define(version: 2020_04_18_175617) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "anamneses", "appointments"
   add_foreign_key "appointments", "patients"
   add_foreign_key "patients", "users"
 end

@@ -28,18 +28,8 @@
             <div class="card-body p-0" style="display: block;">
               <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                  <%= link_to edit_dashboard_patient_appointment_anamnesi_path(@patient, @appointment, @anamnesis), class:"nav-link" do %>
+                  <%= link_to root_path, class:"nav-link" do %>
                     <i class="far fa-envelope"></i> Anamnese
-                  <% end %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to edit_dashboard_patient_appointment_anamnesi_path(@patient, @appointment, @anamnesis), class:"nav-link" do %>
-                    <i class="fas fa-dumbbell"></i> Avaliação Física
-                  <% end %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to edit_dashboard_patient_appointment_anamnesi_path(@patient, @appointment, @anamnesis), class:"nav-link" do %>
-                    <i class="fas fa-camera-retro"></i> Fotos
                   <% end %>
                 </li>
               </ul>
