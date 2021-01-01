@@ -22,7 +22,7 @@ require 'sprockets/railtie'
 Bundler.require(*Rails.groups)
 module Nutrigemeas
   class Application < Rails::Application
-    config.time_zone = 'America/Sao_Paulo'
+    # config.time_zone = 'America/Sao_Paulo'
     config.load_defaults 6.0
     config.i18n.default_locale = 'pt-BR'
     config.generators.system_tests = nil
