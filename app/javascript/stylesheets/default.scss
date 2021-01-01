@@ -28,6 +28,11 @@ $light-grey: #F8F8F8;
     }
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #ffffff;
+    background-color: $nutri-purple;
+}
+
 .bg-success {
     background-color: $nutri-purple !important;
 }

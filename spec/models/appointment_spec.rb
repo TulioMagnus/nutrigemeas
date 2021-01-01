@@ -28,16 +28,12 @@ RSpec.describe Appointment, type: :model do
     described_class.new(
       appointment_date: Faker::Date.birthday(min_age: 18, max_age: 65),
       appointment_type: %w[Consulta Retorno].sample,
-      patient: Pacient.all.sample
+      patient: Patient.all.sample
     )
   end
 
   describe 'Associations' do
     it { should belong_to(:patient) }
-  end
-
-  describe 'Money' do
-    it { should monetize(:price) }
   end
 
   describe 'Validations' do
