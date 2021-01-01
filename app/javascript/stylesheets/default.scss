@@ -11,6 +11,10 @@ $light-grey: #F8F8F8;
     .sidebar a:hover {
         color: $nutri-darker-purple
     }
+
+    .sidebar a:not([href]):hover {
+        color: $nutri-darker-purple
+    }
     .user-panel {
         border-bottom: 1px solid $nutri-purple;
     }
@@ -18,6 +22,9 @@ $light-grey: #F8F8F8;
         border-bottom: 1px solid $nutri-purple;
         color: rgba(255, 255, 255, 0.8);
         background-color: $nutri-purple;
+    }
+    .nav-pills .nav-link:not(.active):hover {
+        color: $nutri-darker-purple
     }
 }
 
@@ -29,20 +36,40 @@ $light-grey: #F8F8F8;
     border-top: 3px solid $nutri-purple;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: $white;
-    background-color: $nutri-purple;
-}
-
 input.input-group-text.purple.lighten-3 {
     background-color: $nutri-purple;
     color: $white;
     border-radius: 10px;
 }
 
+// LINK
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+// /LINK
+
+// PRIMARY BTN
 .btn-primary {
-    background-color: $nutri-purple;
-    border-color: $nutri-purple;
+  color: $white;
+  background-color: $nutri-purple;
+  border-color: $nutri-purple;
 }
 
 .btn-primary:hover {
@@ -51,9 +78,38 @@ input.input-group-text.purple.lighten-3 {
     border-color: $nutri-darker-purple;
 }
 
+.btn-primary:focus, .btn-primary.focus {
+  color: $white;
+  background-color: $nutri-darker-purple;
+  border-color: $nutri-darker-purple;
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: $white;
+  background-color: $nutri-darker-purple;
+  border-color: $nutri-darker-purple;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: $white;
+  background-color: $nutri-darker-purple;
+  border-color: $nutri-darker-purple;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+// /PRIMARY BTN
+
+
+// SUCCESS BTN
 .btn-success {
-    background-color: $nutri-purple;
-    border-color: $nutri-purple;
+  color: $white;
+  background-color: $nutri-purple;
+  border-color: $nutri-purple;
 }
 
 .btn-success:hover {
@@ -62,6 +118,35 @@ input.input-group-text.purple.lighten-3 {
     border-color: $nutri-darker-purple;
 }
 
+.btn-success:focus, .btn-success.focus {
+  color: $white;
+  background-color: $nutri-darker-purple;
+  border-color: $nutri-darker-purple;
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+
+.btn-success.disabled, .btn-success:disabled {
+  color: $white;
+  background-color: $nutri-darker-purple;
+  border-color: $nutri-darker-purple;
+}
+
+.btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+.show > .btn-success.dropdown-toggle {
+  color: $white;
+  background-color: $nutri-darker-purple;
+  border-color: $nutri-darker-purple;
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
+}
+// /SUCCESS BTN
+
+
+
+
 .btn-warning {
     background-color: transparent;
     border-color: $nutri-purple;
@@ -69,7 +154,7 @@ input.input-group-text.purple.lighten-3 {
 
 .page-item.active .page-link {
     z-index: 3;
-    color: #ffffff;
+    color: $white;
     background-color: $nutri-purple;
     border-color: $white;
 }
@@ -81,7 +166,7 @@ input.input-group-text.purple.lighten-3 {
     margin-left: -1px;
     line-height: 1.25;
     color: black;
-    background-color: #ffffff;
+    background-color: $white;
     border: 1px solid #dee2e6;
 }
 
