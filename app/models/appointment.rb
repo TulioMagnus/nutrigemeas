@@ -25,7 +25,6 @@ class Appointment < ApplicationRecord
   belongs_to :patient
   paginates_per 5
   validates_presence_of %w[appointment_date appointment_type patient]
-
   money_field :price
 
   translate_enum :appointment_type

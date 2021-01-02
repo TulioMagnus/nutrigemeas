@@ -1,4 +1,4 @@
-'pt-BR':
+pt-BR:
   activerecord:
     models:
       user:
@@ -7,9 +7,6 @@
       patient:
         one: Paciente
         other: Pacientes
-      appointment:
-        one: Consulta
-        other: Consultas
     attributes:
       user:
         id: Código
@@ -26,7 +23,7 @@
         last_name: Sobrenome
         gender: Gênero
         birth_date: Data de nascimento
-        cpf: CPF
+        document: CPF
         street: Logradouro
         city: Cidade
         state: Estado
@@ -34,17 +31,5 @@
         phone: Telefone
         number: Número
         obs: Observações
-        user_id: Nutri responsável
         user: Nutri responsável
         avatar: Foto do Paciente
-      appointment:
-        payment_status: Pago?
-        payment_status_list:
-          yes: Sim
-          no: Não
-        appointment_date: Data da Consulta
-        appointment_type: Tipo de Consulta
-        appointment_type_list:
-          appointment: Consulta
-          return: Retorno
-        price: Valor da Consulta

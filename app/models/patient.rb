@@ -35,11 +35,12 @@
 #
 class Patient < ApplicationRecord
   belongs_to :user
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   validates_presence_of %w[first_name last_name birth_date user]
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
   after_create :set_patient_status, :create_appointment
+  accepts_nested_attributes_for :appointments, allow_destroy: true
   enum status: {
     active: 0,
     inactive: 1,

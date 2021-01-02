@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      appointment:
+        one: Consulta
+        other: Consultas
+
+    attributes:
+      appointment:
+        payment_status_list:
+          'yes': Sim
+          'no': Não
+        appointment_type_list:
+          return: Retorno
+          appointment: Consulta

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'statistics/index'
     resources :patients do
       resources :appointments do
+        match '/destroy', to: 'appointments#destroy', via: :delete
         member do
           get 'duplicate'
         end
