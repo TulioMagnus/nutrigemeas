@@ -23,6 +23,7 @@
 #
 class Appointment < ApplicationRecord
   belongs_to :patient
+  has_one :skin_fold
   paginates_per 5
   validates_presence_of %w[appointment_date appointment_type patient]
   money_field :price
