@@ -7,7 +7,9 @@ module Dashboard
 
     def index; end
 
-    def show; end
+    def show
+      @skin_fold = @appointment.skin_fold
+    end
 
     def new
       @appointment = @patient.appointments.build

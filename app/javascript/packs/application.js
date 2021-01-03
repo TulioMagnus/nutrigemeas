@@ -1,7 +1,7 @@
-import Rails from "@rails/ujs";
 import "@rails/activestorage";
 import "channels";
 import Turbolinks from 'turbolinks';
+import Rails from "@rails/ujs";
 
 var jQuery = require("jquery")
 global.$ = global.jQuery = jQuery;
@@ -21,9 +21,15 @@ import 'jquery-mask-plugin/dist/jquery.mask.min'
 import './utils'
 import './masks'
 
+import Swal from 'sweetalert2'
+
 Turbolinks.start();
 window.Turbolinks = Turbolinks;
 window.$ = $;
+
+window.Swal = Swal
+
+Rails.start();
 
 $(document).on('turbolinks:load', function() {
   $('body').tooltip({

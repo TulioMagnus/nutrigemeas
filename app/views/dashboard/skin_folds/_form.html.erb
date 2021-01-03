@@ -1,0 +1,14 @@
+<%= simple_form_for [@appointment, skin_fold] do |f| %>
+  <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.input :fold1 %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+  </div>
+<% end %>

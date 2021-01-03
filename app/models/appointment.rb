@@ -27,6 +27,12 @@ class Appointment < ApplicationRecord
   paginates_per 5
   validates_presence_of %w[appointment_date appointment_type patient]
   money_field :price
+  after_create :create_skin_fold
+  accepts_nested_attributes_for :skin_fold, allow_destroy: true
+
+  def create_skin_fold
+    SkinFold.create!(fold1: 0, fold2: 0, fold3: 0, fold4: 0, fold5: 0, fold6: 0, fold7: 0, appointment_id: id)
+  end
 
   translate_enum :appointment_type
   translate_enum :payment_status

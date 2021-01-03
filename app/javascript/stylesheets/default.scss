@@ -149,7 +149,12 @@ a:not([href]):hover {
 }
 // /SUCCESS BTN
 
-
+// SWEET ALERT
+.swal2-icon.swal2-info {
+    border-color: $nutri-purple;
+    color: $nutri-darker-purple
+}
+// /SWEET ALERT
 
 
 .btn-warning {

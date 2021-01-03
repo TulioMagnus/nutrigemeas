@@ -357,6 +357,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sweetify (2.0.0)
+      actionpack
     temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
@@ -435,6 +437,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  sweetify
   translate_enum (~> 0.1.3)
   tty-spinner
   turbolinks (~> 5)

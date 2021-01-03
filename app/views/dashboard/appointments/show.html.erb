@@ -1,27 +1,18 @@
 <!-- Content Header (Page header) -->
-<section class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h2><%= @appointment.patient.full_name %></h2>
-      </div>
-    </div>
-  </div>
-</section>
-
+</br>
 <section class="content">
   <div class="card">
     <div class="card-header">
-      <h2 class="card-title"><%= @appointment.translated_appointment_type %>: <%=l @appointment.appointment_date, format: :default %></h2>
+      <h2 class="card-title">Paciente: <%= @appointment.patient.full_name %> | <%= @appointment.translated_appointment_type %>: <%=l @appointment.appointment_date, format: :default %></h2>
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-2">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Folders</h3>
+              <h3 class="card-title">Itens</h3>
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i> -->
                 </button>
               </div>
             </div>
@@ -30,6 +21,11 @@
                 <li class="nav-item">
                   <%= link_to root_path, class:"nav-link" do %>
                     <i class="far fa-envelope"></i> Anamnese
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to edit_dashboard_patient_appointment_skin_fold_path(@patient.id, @appointment.id), {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}, class:"nav-link" do %>
+                    <i class="far fa-envelope"></i> Dobras Cutâneas
                   <% end %>
                 </li>
               </ul>
@@ -74,3 +70,4 @@
     </div>
   </div>
 </section>
+<div id="modal-window" class="modal hide" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
