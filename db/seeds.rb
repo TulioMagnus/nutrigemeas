@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 if Rails.env.production?
-  User.create(email: 'tuliokpmagnus@gmail.com', first_name: 'Túlio', last_name: 'Magnus', password: '123456', password_confirmation: '123456', avatar: Faker::Avatar.image)
-  User.create(email: 'brunagalcarde@gmail.com', first_name: 'Bruna', last_name: 'Alcarde', password: '123456', password_confirmation: '123456', avatar: Faker::Avatar.image)
-  User.create(email: 'carolinagalcarde@gmail.com', first_name: 'Carolina', last_name: 'Alcarde', password: '123456', password_confirmation: '123456', avatar: Faker::Avatar.image)
+  User.create(email: 'tuliokpmagnus@gmail.com', first_name: 'Túlio', last_name: 'Magnus', password: '123456', password_confirmation: '123456')
+  User.create(email: 'brunagalcarde@gmail.com', first_name: 'Bruna', last_name: 'Alcarde', password: '123456', password_confirmation: '123456')
+  User.create(email: 'carolinagalcarde@gmail.com', first_name: 'Carolina', last_name: 'Alcarde', password: '123456', password_confirmation: '123456')
 end
 
 if Rails.env.development?
