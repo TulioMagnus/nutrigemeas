@@ -8,7 +8,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "admin-lte": "^3.0.5",
-    "apexcharts": "^3.17.1",
+    "apexcharts": "^3.24.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "jquery-mask-plugin": "^1.14.16",
