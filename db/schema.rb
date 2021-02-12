@@ -50,13 +50,20 @@ ActiveRecord::Schema.define(version: 2021_01_02_213319) do
   end
 
   create_table "skin_folds", force: :cascade do |t|
-    t.decimal "fold1"
-    t.decimal "fold2"
-    t.decimal "fold3"
-    t.decimal "fold4"
-    t.decimal "fold5"
-    t.decimal "fold6"
-    t.decimal "fold7"
+    t.decimal "height", default: "0.0", null: false
+    t.decimal "weight", default: "0.0", null: false
+    t.decimal "fold1", default: "0.0", null: false
+    t.decimal "fold2", default: "0.0", null: false
+    t.decimal "fold3", default: "0.0", null: false
+    t.decimal "fold4", default: "0.0", null: false
+    t.decimal "fold5", default: "0.0", null: false
+    t.decimal "fold6", default: "0.0", null: false
+    t.decimal "fold7", default: "0.0", null: false
+    t.decimal "measure1", default: "0.0", null: false
+    t.decimal "measure2", default: "0.0", null: false
+    t.decimal "measure3", default: "0.0", null: false
+    t.decimal "measure4", default: "0.0", null: false
+    t.decimal "measure5", default: "0.0", null: false
     t.bigint "appointment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

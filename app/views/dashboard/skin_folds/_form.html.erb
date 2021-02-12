@@ -1,11 +1,52 @@
-<%= simple_form_for [@appointment, skin_fold] do |f| %>
+<%= simple_form_for [:dashboard, @patient, @appointment, @skin_fold] do |f| %>
   <div class="modal-body">
       <div class="row">
         <div class="col-md-12">
-          <%= f.input :fold1 %>
+          <p><strong>Dados Antropométricos Básicos</strong></p>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :weight %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :height %>
         </div>
       </div>
-    <% end %>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Dobras</p>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :fold1 %>
+          <%= f.input :fold2 %>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :fold3 %>
+          <%= f.input :fold4 %>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :fold5 %>
+          <%= f.input :fold6 %>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :fold7 %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Circunferências</p>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :measure1 %>
+          <%= f.input :measure2 %>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :measure3 %>
+          <%= f.input :measure4 %>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :measure5 %>
+        </div>
+      </div>
   </div>
   <div class="modal-footer">
     <%= f.submit 'Salvar', class: 'btn btn-primary' %>

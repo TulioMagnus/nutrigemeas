@@ -17,13 +17,13 @@
         <div class="small-box bg-info">
           <div class="inner">
             <h3><%= @count_patients %></h3>
-            <p>Patientes cadastrados</p>
+            <p>Pacientes cadastrados</p>
           </div>
           <div class="icon">
             <i class="ion ion-person"></i>
           </div>
           <%= link_to dashboard_patients_path, class:"small-box-footer" do %>
-            Clientes <i class="fas fa-arrow-circle-right"></i>
+            Pacientes <i class="fas fa-arrow-circle-right"></i>
           <% end %>
         </div>
       </div>
@@ -54,7 +54,7 @@
       <div class="col-lg-3 col-6">
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3><%= @total_to_earn %></h3>
+            <h3>R$<%= @total_to_earn %></h3>
             <p>A receber</p>
           </div>
           <div class="icon">

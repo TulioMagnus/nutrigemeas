@@ -1,0 +1,23 @@
+pt-BR:
+  activerecord:
+    models:
+      skin_fold:
+        one: Dobra Cutânea
+        other: Dobras Cutâneas
+
+    attributes:
+      skin_fold:
+        height: Altura
+        weight: Peso
+        fold1: Tricipital
+        fold2: Abdominal
+        fold3: Subescapular
+        fold4: Axilar Média
+        fold5: Coxa
+        fold6: Torácica
+        fold7: Suprailíaca
+        measure1: Abdômen
+        measure2: Cintura
+        measure3: Quadril
+        measure4: Coxa Direita
+        measure5: Braço Direito

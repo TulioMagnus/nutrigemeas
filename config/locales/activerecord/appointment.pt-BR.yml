@@ -7,9 +7,13 @@ pt-BR:
 
     attributes:
       appointment:
+        payment_status: Pagou?
+        price: Valor da Consulta
+        appointment_date: Data da Consulta
         payment_status_list:
           'yes': Sim
           'no': Não
+        appointment_type: Tipo de Consulta
         appointment_type_list:
           return: Retorno
           appointment: Consulta

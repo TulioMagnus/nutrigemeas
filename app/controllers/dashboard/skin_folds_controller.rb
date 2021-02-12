@@ -2,7 +2,7 @@
 
 module Dashboard
   class SkinFoldsController < DashboardController
-    before_action :set_appointment
+    before_action :set_appointment, :set_patient
     before_action :set_skin_fold, only: %i[show edit update]
 
     def index; end
@@ -18,7 +18,7 @@ module Dashboard
     def update
       respond_to do |format|
         if @skin_fold.update(skin_fold_params)
-          format.html { redirect_to [:dashboard, @patient], notice: 'Dobras editadas com sucesso' }
+          format.html { redirect_to [:dashboard, @patient, @appointment], notice: 'Dobras editadas com sucesso' }
         else
           format.html { render :edit }
         end
@@ -35,8 +35,13 @@ module Dashboard
       @appointment = Appointment.find(params[:patient_id])
     end
 
+    def set_patient
+      @patient = @appointment.patient
+    end
+
     def skin_fold_params
-      params.require(:skin_fold).permit(:fold1, :fold2, fold3, :fold4, :fold5, :fold6, :fold7, :appointment)
+      params.require(:skin_fold).permit(:fold1, :fold2, :fold3, :fold4, :measure1, :measure2,
+                                        :measure3, :measure4, :measure5, :fold5, :fold6, :fold7, :appointment)
     end
   end
 end
