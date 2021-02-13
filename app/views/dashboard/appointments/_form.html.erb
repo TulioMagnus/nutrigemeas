@@ -20,30 +20,33 @@
           <%= simple_form_for [:dashboard, @patient, @appointment] do |f| %>
             <div class="card-body">
               <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <%= f.input :appointment_date, as: :date, html5: true %>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <%= f.input :appointment_type, as: :select, collection: Appointment.translated_appointment_types %>
                   </div>
                 </div>
-                <div class="col-md-3">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
                   <div class="form-group">
-        <%= f.input :formatted_price, as: :string, input_html: { class: 'input--brl-money input--brl-money-public' } %>
+                    <%= f.input :formatted_price, as: :string, input_html: { class: 'input--brl-money input--brl-money-public' } %>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <%= f.input :payment_status, as: :select, collection: Appointment.translated_payment_statuses, include_blank: false %>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="actions">
+            <div class="modal-footer">
               <%= f.button :submit %>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
           <% end %>
         </div>

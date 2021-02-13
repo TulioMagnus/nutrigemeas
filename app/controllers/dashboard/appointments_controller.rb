@@ -13,6 +13,9 @@ module Dashboard
 
     def new
       @appointment = @patient.appointments.build
+      respond_to do |format|
+        format.js
+      end
     end
 
     def duplicate
@@ -22,7 +25,11 @@ module Dashboard
       redirect_to [:dashboard, @patient], notice: 'Consulta Duplicada com Sucesso'
     end
 
-    def edit; end
+    def edit
+      respond_to do |format|
+        format.js
+      end
+    end
 
     def create
       @appointment = @patient.appointments.build(appointment_params)
