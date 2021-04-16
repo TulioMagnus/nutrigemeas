@@ -4,6 +4,8 @@ import Turbolinks from 'turbolinks';
 import Rails from "@rails/ujs";
 
 var jQuery = require("jquery")
+window.jQuery = $;
+window.$ = $;
 global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 import ApexCharts from 'apexcharts'
