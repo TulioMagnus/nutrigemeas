@@ -24,8 +24,8 @@
                   <% end %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to edit_dashboard_patient_appointment_skin_fold_path(@patient.id, @appointment.id), {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}, class:"nav-link" do %>
-                    <i class="far fa-envelope"></i> Dobras Cutâneas
+                  <%= link_to edit_dashboard_patient_appointment_skin_fold_path(@patient.id, @appointment.id),  {'class' => 'nav-link', remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %>
+                    <i class="far fa-envelope"></i> Dobras
                   <% end %>
                 </li>
               </ul>
@@ -46,7 +46,7 @@
               <div class="info-box bg-light">
                 <div class="info-box-content">
                   <span class="info-box-text text-center text-muted">Peso atual</span>
-                  <span class="info-box-number text-center text-muted mb-0">xx</span>
+                  <span class="info-box-number text-center text-muted mb-0"><%= @skin_fold.weight %> Kg</span>
                 </div>
               </div>
             </div>
@@ -54,14 +54,14 @@
               <div class="info-box bg-light">
                 <div class="info-box-content">
                   <span class="info-box-text text-center text-muted">Altura atual</span>
-                  <span class="info-box-number text-center text-muted mb-0">cm<span>
+                  <span class="info-box-number text-center text-muted mb-0"><%= @skin_fold.height %>m<span>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <h4>Resumo da Consulta?</h4>
+              <h4>Resumo da Consulta</h4>
             </div>
             <p>Aqui poderia ter gráfico da evolução</p>
           </div>

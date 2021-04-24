@@ -31,7 +31,7 @@ class Appointment < ApplicationRecord
   accepts_nested_attributes_for :skin_fold, allow_destroy: true
 
   def create_skin_fold
-    SkinFold.create!(appointment_id: id)
+    SkinFold.find_or_initialize_by(appointment_id: id)
   end
 
   translate_enum :appointment_type

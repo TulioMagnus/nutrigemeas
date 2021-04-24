@@ -22,6 +22,7 @@ module Dashboard
       new_appointment = @appointment.amoeba_dup
       new_appointment.update!(appointment_date: Time.zone.now)
       new_appointment.save
+      new_appointment.skin_fold.update!(appointment: new_appointment)
       redirect_to [:dashboard, @patient], notice: 'Consulta Duplicada com Sucesso'
     end
 
