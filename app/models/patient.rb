@@ -39,7 +39,7 @@ class Patient < ApplicationRecord
   validates_presence_of %w[first_name last_name birth_date user]
   paginates_per 12
   mount_uploader :avatar, AvatarUploader
-  after_create :set_patient_status, :create_appointment
+  after_create :set_patient_status, :setup_patient
   accepts_nested_attributes_for :appointments, allow_destroy: true
   enum status: {
     active: 0,
@@ -47,8 +47,9 @@ class Patient < ApplicationRecord
     pending: 2
   }
 
-  def create_appointment
-    Appointment.create!(appointment_date: Time.zone.now, patient_id: id, appointment_type: :appointment)
+  def setup_patient
+    appointment = Appointment.create!(appointment_date: Time.zone.now, patient_id: id, appointment_type: :appointment)
+    SkinFold.create!(appointment: appointment)
   end
 
   def set_patient_status

@@ -5,9 +5,7 @@ module ImplementsMoneyNumber
   extend ActiveSupport::Concern
 
   def money_field(column, numericality: nil, allow_nil: false, check: -> { true })
-    if numericality
-      validates("formatted_#{column}", numericality: numericality, allow_nil: allow_nil, if: check) if numericality
-    end
+    validates("formatted_#{column}", numericality: numericality, allow_nil: allow_nil, if: check) if numericality && numericality
 
     define_money_number_methods(column)
   end
@@ -16,7 +14,7 @@ module ImplementsMoneyNumber
     return if value.blank?
     return value.to_d if value.is_a?(Numeric)
 
-    value.to_s.gsub(/[^0-9\,]+/, '').gsub(',', '.').to_d
+    value.to_s.gsub(/[^0-9,]+/, '').gsub(',', '.').to_d
   end
 
   def formatted_money(number)

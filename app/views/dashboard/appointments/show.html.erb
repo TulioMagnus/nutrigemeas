@@ -25,7 +25,7 @@
                 </li>
                 <li class="nav-item">
                   <%= link_to edit_dashboard_patient_appointment_skin_fold_path(@patient.id, @appointment.id),  {'class' => 'nav-link', remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} do %>
-                    <i class="far fa-envelope"></i> Dobras
+                    <i class="far fa-envelope"></i> Composição
                   <% end %>
                 </li>
               </ul>
@@ -46,15 +46,15 @@
               <div class="info-box bg-light">
                 <div class="info-box-content">
                   <span class="info-box-text text-center text-muted">Peso atual</span>
-                  <span class="info-box-number text-center text-muted mb-0"><%= @skin_fold.weight %> Kg</span>
+                  <span class="info-box-number text-center text-muted mb-0"><%= @skin_fold.try(:weight) %> Kg</span>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-4">
               <div class="info-box bg-light">
                 <div class="info-box-content">
-                  <span class="info-box-text text-center text-muted">Altura atual</span>
-                  <span class="info-box-number text-center text-muted mb-0"><%= @skin_fold.height %>m<span>
+                  <span class="info-box-text text-center text-muted">Gordura</span>
+                  <span class="info-box-number text-center text-muted mb-0"><%= @appointment.try(:fat) %>%<span>
                 </div>
               </div>
             </div>

@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2021_01_02_213319) do
     t.bigint "patient_id", null: false
     t.string "appointment_type_cd"
     t.decimal "price", default: "0.0"
+    t.decimal "density", default: "0.0"
+    t.decimal "fat", default: "0.0"
+    t.decimal "water", default: "0.0"
+    t.decimal "mass", default: "0.0"
+    t.decimal "organs", default: "0.0"
     t.string "payment_status_cd", default: "yes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

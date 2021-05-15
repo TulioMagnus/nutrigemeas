@@ -7,8 +7,13 @@
 #  id                  :bigint           not null, primary key
 #  appointment_date    :date
 #  appointment_type_cd :string
+#  density             :decimal(, )      default(0.0)
+#  fat                 :decimal(, )      default(0.0)
+#  mass                :decimal(, )      default(0.0)
+#  organs              :decimal(, )      default(0.0)
 #  payment_status_cd   :string           default("yes")
 #  price               :decimal(, )      default(0.0)
+#  water               :decimal(, )      default(0.0)
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  patient_id          :bigint           not null

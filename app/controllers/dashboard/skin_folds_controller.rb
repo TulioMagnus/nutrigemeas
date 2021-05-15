@@ -18,7 +18,8 @@ module Dashboard
     def update
       respond_to do |format|
         if @skin_fold.update(skin_fold_params)
-          format.html { redirect_to [:dashboard, @patient, @skin_fold.appointment], notice: 'Dobras editadas com sucesso' }
+          Process::Utils::Fat.new(@skin_fold, @skin_fold.appointment.age_on_appointment).call
+          format.html { redirect_to [:dashboard, @patient, @skin_fold.appointment], notice: 'Antropometria editada com sucesso' }
         else
           format.html { render :edit }
         end
