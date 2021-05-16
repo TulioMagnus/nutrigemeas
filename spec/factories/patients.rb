@@ -4,26 +4,27 @@
 #
 # Table name: patients
 #
-#  id         :bigint           not null, primary key
-#  avatar     :string
-#  birth_date :date
-#  city       :string
-#  country    :string
-#  cpf        :string
-#  email      :string
-#  first_name :string
-#  gender     :string
-#  last_name  :string
-#  number     :integer
-#  obs        :text
-#  phone      :string
-#  profession :string
-#  state      :string
-#  status     :integer
-#  street     :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :bigint           not null
+#  id           :bigint           not null, primary key
+#  avatar       :string
+#  birth_date   :date
+#  city         :string
+#  country      :string
+#  cpf          :string
+#  email        :string
+#  first_name   :string
+#  gender       :string
+#  last_name    :string
+#  number       :integer
+#  obs          :text
+#  phone        :string
+#  plan_type_cd :string
+#  profession   :string
+#  state        :string
+#  status       :integer
+#  street       :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  user_id      :bigint           not null
 #
 # Indexes
 #

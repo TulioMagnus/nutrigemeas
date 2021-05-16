@@ -3,7 +3,7 @@
 source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby '3.0.0'
 
 gem 'amoeba'
 gem 'apexcharts', '~> 0.1.8'
@@ -46,9 +46,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rails-erd', '~> 1.6'
   gem 'reek', '~> 5.6'
-  gem 'rubocop', '~> 0.80.1'
+  gem 'rubocop'
   gem 'rubocop-performance', '~> 1.5', '>= 1.5.2'
-  gem 'rubocop-rails', '~> 2.4', '>= 2.4.2'
+  gem 'rubocop-rails'
   gem 'rubocop-rspec', '~> 1.38', '>= 1.38.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

@@ -81,7 +81,7 @@ module Dashboard
       params.require(:patient).permit(:first_name, :last_name, :birth_date, :gender, :street, :number,
                                       :state, :country, :city, :cpf, :obs, :phone, :user_id, :email,
                                       :avatar, :avatar_cache, :remove_avatar, :professionm, :status,
-                                      :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+                                      :plan_type)
     end
   end
 end

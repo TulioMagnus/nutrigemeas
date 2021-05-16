@@ -11,6 +11,9 @@
             <p class="text-muted text-center"><%= @patient.profession %></p>
             <ul class="list-group list-group-unbordered mb-3">
               <li class="list-group-item">
+                <b>Plano: </b> <a class="float-right"><%= I18n.t(".activerecord..attributes.patient.plan_type_list.#{@patient.plan_type}") %></a>
+              </li>
+              <li class="list-group-item">
                 <b>Idade: </b> <a class="float-right"><%= @patient.age %> anos</a>
               </li>
               <li class="list-group-item">
@@ -164,7 +167,7 @@
                             ytitle: 'Properties',
                             stacked: true
                           } %>
-                          <%= line_chart(series, options) %>
+                          <%#= line_chart(series, options) %>
                         </dl>
                       </div>
                     </div>

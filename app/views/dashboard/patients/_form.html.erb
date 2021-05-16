@@ -47,19 +47,24 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group">
                   <%= f.input :cpf, input_html: { class: 'input--cpf' } %>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group">
                   <%= f.input :email, as: :email %>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-group">
                   <%= f.input :phone, as: :tel, input_html: { class: 'phone' } %>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <%= f.input :plan_type, as: :select, collection: Patient::translated_plan_types %>
                 </div>
               </div>
             </div>
