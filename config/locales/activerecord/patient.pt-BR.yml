@@ -26,6 +26,9 @@ pt-BR:
         profession: Profissão
         state: Estado
         status: Situação
+        status_list:
+          active: Ativo
+          inactive: Inativo
         street: Logradouro
         created_at: Criado em
         updated_at: Atualizado em

@@ -42,11 +42,10 @@ class Patient < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   after_create :set_patient_status, :setup_patient
   accepts_nested_attributes_for :appointments, allow_destroy: true
-  enum status: {
-    active: 0,
-    inactive: 1,
-    pending: 2
-  }
+
+  STATUSES = %i[active inactive].freeze
+  as_enum :status, STATUSES, prefix: true, map: :string
+  translate_enum :status
 
   PLAN_TYPES = %i[basic balance freedom].freeze
   as_enum :plan_type, PLAN_TYPES, prefix: true, map: :string
@@ -58,7 +57,7 @@ class Patient < ApplicationRecord
   end
 
   def set_patient_status
-    pending!
+    active!
   end
 
   def full_name
