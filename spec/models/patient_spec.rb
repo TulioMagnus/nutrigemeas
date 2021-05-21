@@ -20,7 +20,7 @@
 #  plan_type_cd :string
 #  profession   :string
 #  state        :string
-#  status       :integer
+#  status_cd    :string
 #  street       :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null

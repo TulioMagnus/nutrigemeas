@@ -29,17 +29,22 @@
           <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
             <div class="card bg-light">
               <div class="card-header text-muted border-bottom-0">
-                <%= patient.profession %>
+                <h2 class="lead"><b><%= patient.full_name %></b></h2>
               </div>
               <div class="card-body pt-0">
                 <div class="row">
                   <div class="col-7">
-                    <h2 class="lead"><b><%= patient.full_name %></b></h2>
                     <p class="text-muted text-sm"><b><%= patient.age %> anos</b></p>
                     <ul class="ml-4 mb-0 fa-ul text-muted">
                       <li class="small">
                         <span class="fa-li"><i class="fas fa-lg fa-mobile-alt"></i>
                         </span> <%= patient.phone %>
+                      </li>
+                      <li class="medium" style="margin-left: 0px">
+                          <%= plan_badge(patient.plan_type) %>
+                      </li>
+                      <li class="medium">
+                          <%= status_badge(patient.status) %>
                       </li>
                     </ul>
                   </div>

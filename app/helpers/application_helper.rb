@@ -13,4 +13,25 @@ module ApplicationHelper
       'Invalido'
     end
   end
+
+  def status_badge(status)
+    if status == :active
+      '<span class="badge badge-success">Ativo</span>'.html_safe
+    else
+      '<span class="badge badge-danger">Inativo</span>'.html_safe
+    end
+  end
+
+  def plan_badge(plan)
+    case plan
+    when :basic
+      '<span class="badge badge-secondary">Básico</span>'.html_safe
+    when :balance
+      '<span class="badge badge-secondary">Equilíbrio</span>'.html_safe
+    when :freedom
+      '<span class="badge badge-secondary">Liberdade</span>'.html_safe
+    else
+      '<span class="badge badge-danger"> </span>'.html_safe
+    end
+  end
 end

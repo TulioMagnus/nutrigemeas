@@ -16,7 +16,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-require 'money-rails/test_helpers'
+# require 'money-rails/test_helpers'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

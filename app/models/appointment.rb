@@ -12,6 +12,7 @@
 #  mass                :decimal(, )      default(0.0)
 #  organs              :decimal(, )      default(0.0)
 #  payment_status_cd   :string           default("yes")
+#  plan_type_cd        :string
 #  price               :decimal(, )      default(0.0)
 #  water               :decimal(, )      default(0.0)
 #  created_at          :datetime         not null
@@ -34,6 +35,10 @@ class Appointment < ApplicationRecord
   money_field :price
   after_create :create_skin_fold
   accepts_nested_attributes_for :skin_fold, allow_destroy: true
+
+  PLAN_TYPES = %i[basic balance freedom].freeze
+  as_enum :plan_type, PLAN_TYPES, prefix: true, map: :string
+  translate_enum :plan_type
 
   def create_skin_fold
     SkinFold.find_or_initialize_by(appointment_id: id)

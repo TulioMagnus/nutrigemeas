@@ -39,6 +39,11 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
+                    <%= f.input :plan_type, as: :select, collection: Appointment::translated_plan_types %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
                     <%= f.input :payment_status, as: :select, collection: Appointment.translated_payment_statuses, include_blank: false %>
                   </div>
                 </div>

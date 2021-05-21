@@ -12,6 +12,7 @@
 #  mass                :decimal(, )      default(0.0)
 #  organs              :decimal(, )      default(0.0)
 #  payment_status_cd   :string           default("yes")
+#  plan_type_cd        :string
 #  price               :decimal(, )      default(0.0)
 #  water               :decimal(, )      default(0.0)
 #  created_at          :datetime         not null

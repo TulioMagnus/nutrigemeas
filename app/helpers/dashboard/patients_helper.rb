@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Dashboard
-  module PacientsHelper
+  module PatientsHelper
   end
 end

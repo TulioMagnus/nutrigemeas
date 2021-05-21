@@ -8,6 +8,11 @@ pt-BR:
     attributes:
       appointment:
         payment_status: Pagou?
+        plan_type: Plano
+        plan_type_list:
+          basic: Básico
+          balance: Equilíbrio
+          freedom: Liberdade Alimentar
         price: Valor da Consulta
         appointment_date: Data da Consulta
         payment_status_list:
