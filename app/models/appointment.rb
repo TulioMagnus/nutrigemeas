@@ -29,6 +29,10 @@
 #  fk_rails_...  (patient_id => patients.id)
 #
 class Appointment < ApplicationRecord
+  scope :no, -> { where(appointment_status_cd: :no) }
+  scope :no_show, -> { where(appointment_status_cd: :no_show) }
+  scope :days_30_past, -> { where(appointment_date: Time.zone.today - 30..Time.zone.today) }
+  scope :days_7_future, -> { where(appointment_date: Time.zone.today + 1..Time.zone.today + 7) }
   belongs_to :patient
   has_one :skin_fold, dependent: :destroy
   paginates_per 5
@@ -57,7 +61,7 @@ class Appointment < ApplicationRecord
   as_enum :payment_status, PAYMENT_STATUS, map: :string
   translate_enum :payment_status
 
-  APPOINTMENT_STATUS = %i[yes no].freeze
+  APPOINTMENT_STATUS = %i[yes no no_show].freeze
   as_enum :appointment_status, APPOINTMENT_STATUS, map: :string
   translate_enum :appointment_status
 

@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="card-header border-transparent">
+    <h3 class="card-title"><%= title %></h3>
+
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+        <i class="fas fa-minus"></i>
+      </button>
+    </div>
+  </div>
+  <div class="card-body p-0" style="display: block;">
+    <div class="table-responsive">
+      <table class="table m-0">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Paciente</th>
+            <th>Valor</th>
+            <th>Plano</th>
+            <th>Pago?</th>
+            <th>Concluída?</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% hash.each do |appointment| %>
+            <tr>
+              <td><%= l appointment.appointment_date, format: :default %></td>
+              <td><%= link_to appointment.patient.full_name, dashboard_patient_path(appointment.patient) %></td>
+              <td><%= appointment.formatted_price %></td>
+              <td><%= I18n.t(".activerecord.attributes.appointment.plan_type_list.#{appointment.plan_type}") %></td>
+              <td><%= appointment.translated_payment_status %></td>
+              <td><%= appointment.translated_appointment_status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer clearfix" style="display: block;">
+  </div>
+</div>

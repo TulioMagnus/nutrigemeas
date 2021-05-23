@@ -19,6 +19,7 @@ pt-BR:
         appointment_status_list:
           'yes': Sim
           'no': Não
+          'no_show': Não compareceu
         payment_status_list:
           'yes': Sim
           'no': Não
