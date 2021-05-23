@@ -110,6 +110,10 @@
                                    class:"btn btn-warning" do %>
                                     <i class="fas fa-copy"></i>
                                   <% end %>
+                                  <%= link_to dashboard_patient_appointment_path(@patient, appointment), data:{ confirm: "Tem certeza que deseja exluir a consulta do dia #{appointment.appointment_date}" }, method: :delete,
+                                   class:"btn btn-danger" do %>
+                                    <i class="fas fa-trash"></i>
+                                  <% end %>
                                 </td>
                               </tr>
                             <% end %>
