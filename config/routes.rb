@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get 'welcome/index'
     get 'statistics/index'
+    get 'alerts/index'
     resources :patients do
       resources :appointments do
         resources :skin_folds

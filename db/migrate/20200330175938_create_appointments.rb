@@ -14,6 +14,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.decimal :mass, default: 0
       t.decimal :organs, default: 0
       t.string :payment_status_cd, default: 'yes'
+      t.string :appointment_status_cd, default: 'no'
 
       t.timestamps
     end

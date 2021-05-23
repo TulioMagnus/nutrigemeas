@@ -86,6 +86,7 @@
                               <th>Preço</th>
                               <th>Plano</th>
                               <th>Pago?</th>
+                              <th>Foi realizada?</th>
                               <th></th>
                             </tr>
                           </thead>
@@ -97,6 +98,7 @@
                                 <td><%= appointment.formatted_price %></td>
                                 <td><%= I18n.t(".activerecord.attributes.appointment.plan_type_list.#{appointment.plan_type}") %></td>
                                 <td><%= appointment.translated_payment_status %></td>
+                                <td><%= appointment.translated_appointment_status %></td>
                                 <td>
                                   <%= link_to dashboard_patient_appointment_path(@patient, appointment),
                                    class:"btn btn-success" do %>

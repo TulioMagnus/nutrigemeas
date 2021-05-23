@@ -51,5 +51,6 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.cell_phone }
     obs { Faker::Hipster.paragraph }
     profession { Faker::Job.title }
+    plan_type { Patient::PLAN_TYPES.sample }
   end
 end

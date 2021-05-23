@@ -8,6 +8,7 @@ pt-BR:
     attributes:
       appointment:
         payment_status: Pagou?
+        appointment_status: Consulta realizada?
         plan_type: Plano
         plan_type_list:
           basic: Básico
@@ -15,6 +16,9 @@ pt-BR:
           freedom: Liberdade Alimentar
         price: Valor da Consulta
         appointment_date: Data da Consulta
+        appointment_status_list:
+          'yes': Sim
+          'no': Não
         payment_status_list:
           'yes': Sim
           'no': Não

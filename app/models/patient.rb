@@ -52,7 +52,7 @@ class Patient < ApplicationRecord
   translate_enum :plan_type
 
   def setup_patient
-    appointment = Appointment.create!(appointment_date: Time.zone.now, patient_id: id, appointment_type: :appointment)
+    appointment = Appointment.create!(appointment_date: Time.zone.now, patient_id: id, appointment_type: :appointment, plan_type: plan_type)
     SkinFold.create!(appointment: appointment)
   end
 

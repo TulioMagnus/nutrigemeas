@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_01_02_213319) do
     t.decimal "mass", default: "0.0"
     t.decimal "organs", default: "0.0"
     t.string "payment_status_cd", default: "yes"
+    t.string "appointment_status_cd", default: "no"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_appointments_on_patient_id"

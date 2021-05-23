@@ -4,20 +4,21 @@
 #
 # Table name: appointments
 #
-#  id                  :bigint           not null, primary key
-#  appointment_date    :date
-#  appointment_type_cd :string
-#  density             :decimal(, )      default(0.0)
-#  fat                 :decimal(, )      default(0.0)
-#  mass                :decimal(, )      default(0.0)
-#  organs              :decimal(, )      default(0.0)
-#  payment_status_cd   :string           default("yes")
-#  plan_type_cd        :string
-#  price               :decimal(, )      default(0.0)
-#  water               :decimal(, )      default(0.0)
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  patient_id          :bigint           not null
+#  id                    :bigint           not null, primary key
+#  appointment_date      :date
+#  appointment_status_cd :string           default("no")
+#  appointment_type_cd   :string
+#  density               :decimal(, )      default(0.0)
+#  fat                   :decimal(, )      default(0.0)
+#  mass                  :decimal(, )      default(0.0)
+#  organs                :decimal(, )      default(0.0)
+#  payment_status_cd     :string           default("yes")
+#  plan_type_cd          :string
+#  price                 :decimal(, )      default(0.0)
+#  water                 :decimal(, )      default(0.0)
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  patient_id            :bigint           not null
 #
 # Indexes
 #
@@ -44,18 +45,21 @@ class Appointment < ApplicationRecord
     SkinFold.find_or_initialize_by(appointment_id: id)
   end
 
-  translate_enum :appointment_type
-  translate_enum :payment_status
-
   amoeba do
     enable
   end
 
   APPOINTMENT_TYPE = %i[appointment return].freeze
   as_enum :appointment_type, APPOINTMENT_TYPE, map: :string
+  translate_enum :appointment_type
 
   PAYMENT_STATUS = %i[yes no].freeze
   as_enum :payment_status, PAYMENT_STATUS, map: :string
+  translate_enum :payment_status
+
+  APPOINTMENT_STATUS = %i[yes no].freeze
+  as_enum :appointment_status, APPOINTMENT_STATUS, map: :string
+  translate_enum :appointment_status
 
   def age_on_appointment
     ad = appointment_date
